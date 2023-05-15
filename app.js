@@ -1,14 +1,10 @@
-require('dotenv').config();
-
-const app = express();
-
-
+require('dotenv').config()
+const app = express()
 app.get("/", (req, res)=>{
     res.send("<h1>Server is running</h1>")
 
 })
 
-//Register
 app.post("/register", async (req, res)=>{
     try{
         //get all data from body
