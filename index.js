@@ -5,9 +5,6 @@ app.listen(port, ()=>{
   console.log(`Server is running on port: ${port}`)
 })
 
-
-
-
 // // parse application/x-www-form-urlencoded
 // app.use(bodyParser.urlencoded({ extended: false }));
 

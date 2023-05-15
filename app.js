@@ -9,4 +9,19 @@ app.get("/", (req, res)=>{
 
 })
 
+app.post("/register", async (req, res)=>{
+    try{
+        //get all data from body
+        const{firstname, lastname, email, password}= req.body
+        //all the data should exists
+        if (!(firstname && lastname && email && password)){
+            res.status(400).send('All field are required.')
+
+        }
+
+    }catch{
+
+    }
+});
+
 module.exports = app
