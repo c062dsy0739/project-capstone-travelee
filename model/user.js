@@ -1,22 +1,19 @@
-const ref = db.ref('account/user1');
+const { getUsersCollection } = require('../database/database');
 
-// Read data
-collectionRef.get()
-  .then((snapshot) => {
-    snapshot.forEach((doc) => {
-      console.log(doc.id, '=>', doc.data());
-    });
-  })
-  .catch((error) => {
-    console.log('Error getting documents:', error);
-  });
+// Fungsi untuk membuat pengguna baru
+const createUser = async (firstName, lastName, email, password) => {
+  const usersCollection = getUsersCollection();
+  const user = {
+    firstName,
+    lastName,
+    email,
+    password
+  };
 
-// Write data
-const newData = { name: 'John', age: 30 };
-collectionRef.add(newData)
-  .then((docRef) => {
-    console.log('Document written with ID:', docRef.id);
-  })
-  .catch((error) => {
-    console.error('Error adding document:', error);
-  });
+  const newUser = await usersCollection.add(user);
+  return newUser.id;
+};
+
+module.exports = {
+  createUser
+};
