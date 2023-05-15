@@ -1,7 +1,6 @@
-require('dotenv').config()
-const express = require('express')
+require('dotenv').config();
 
-const app = express()
+const app = express();
 
 
 app.get("/", (req, res)=>{
@@ -9,6 +8,7 @@ app.get("/", (req, res)=>{
 
 })
 
+//Register
 app.post("/register", async (req, res)=>{
     try{
         //get all data from body
