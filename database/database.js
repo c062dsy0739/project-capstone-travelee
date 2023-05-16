@@ -1,5 +1,5 @@
 const admin = require("firebase-admin");
-const serviceAccount = require("./google-services.json");
+const serviceAccount = require("google-services.json");
 
 // Konfigurasi Firebase Admin SDK
 admin.initializeApp({

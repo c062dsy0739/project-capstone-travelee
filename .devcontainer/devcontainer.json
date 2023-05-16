@@ -27,7 +27,8 @@
 		"vscode": {
 			"extensions": [
 				"rangav.vscode-thunder-client",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"ms-vsliveshare.vsliveshare"
 			]
 		}
 	 }

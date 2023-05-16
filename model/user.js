@@ -1,4 +1,4 @@
-const { getUsersCollection } = require('../database/database');
+const { getUsersCollection } = require('database/database.js');
 
 // Fungsi untuk membuat pengguna baru
 const createUser = async (firstName, lastName, email, password) => {
