@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const randomstring = require("randomstring");
+const db = require("./firebase");
 
 // Fungsi untuk menghasilkan kode OTP
 function generateOTP() {

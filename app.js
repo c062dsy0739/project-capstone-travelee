@@ -20,7 +20,8 @@ app.post("/register", async (req, res) => {
     const { firstname, lastname, email, password } = req.body;
 
     // Simpan data user ke Firestore
-    const userRef = await db.collection("users").add({
+    const userRef = db.collection("users").doc(); // Buat dokumen baru dengan ID acak
+    await userRef.set({
       firstname,
       lastname,
       email,
