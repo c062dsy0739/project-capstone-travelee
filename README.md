@@ -12,7 +12,7 @@ Travelee : Travelee GitHub Repositories of Bangkit Academy 2023 Capstone Project
 
 # About The Travelee
 
-(...)
+To further promote sustainable vacation practices and increase awareness at specific locations in Indonesia, a team has developed a digital product that incorporates the concept of ecotourism. The app provides personalized recommendations for ecotourism experiences and safety guidelines for traveling in an environmentally conscious manner. By created these technologies, the app can deliver a seamless and user-friendly experience that promotes sustainable tourism practices. 
 
 
 # Team Members
