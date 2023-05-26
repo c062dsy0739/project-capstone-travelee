@@ -82,7 +82,7 @@ In our project is divided into four branches.
 
 # API Documentation
 
-For API documentation, see the following link [RESTful APIs GetLoc](./restful-apis)
+For API documentation, see the following link [RESTful APIs Travelee](./restful-apis)
 
 # License
 
