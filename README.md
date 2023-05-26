@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="#">
-    <img src="logo/logo_travelee.png">
+    <img src="logo_travelee.png">
   </a>
 </p>
 <br>
