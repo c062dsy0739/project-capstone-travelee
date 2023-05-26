@@ -37,7 +37,7 @@ To further promote sustainable vacation practices and increase awareness at spec
 In our project is divided into four branches.
 
 1. [main](https://github.com/c062dsy0739/project-capstone-travelee/tree/main)
-2. [android-development](https://github.com/c062dsy0739/project-capstone-travelee/mobile-development)
+2. [android-development](https://github.com/c062dsy0739/project-capstone-travelee/tree/mobile-development)
 3. [cloud-computing](https://github.com/c062dsy0739/project-capstone-travelee/tree/cloud-computing)
 4. [machine-learning](https://github.com/c062dsy0739/project-capstone-travelee/tree/machine-learning)
 
