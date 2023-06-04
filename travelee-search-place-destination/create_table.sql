@@ -1,5 +1,5 @@
 CREATE TABLE place_destination (
-    "place_id" INT(10) NOT NULL AUTO_INCREMENT,
+    "place_id" INT(10) NOT NULL,
     PRIMARY KEY(place_id),
     "place_name" VARCHAR(255) NOT NULL,
     "place_description" VARCHAR(255) NOT NULL,
