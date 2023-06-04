@@ -1,11 +1,11 @@
 /place 
-# Get all list wisata
+# Get all list place
 
 /place/{id}
 # Get data wisata filtering by place_id
 
-/place/search/name?nama={nama}
-# Get data wisata search by name
+/place/search/place_name?nama={nama}
+# Get data place search by name
 
 /place/search/city?kota={kota}
-# Get data wisata search by city
+# Get data place search by city
