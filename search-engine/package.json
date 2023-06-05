@@ -1,0 +1,17 @@
+{
+  "name": "travelee-search-engine",
+  "version": "1.0.0",
+  "description": "fitur search engine",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "noor",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1"
+  }
+}
