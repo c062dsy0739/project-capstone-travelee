@@ -1,19 +1,27 @@
 const express = require("express");
 const app = express();
+const connection = require("./config/database");
+const selectQuery = require("./config/dataparser");
+
 app.use(express.json());
 
-const connection = require("./config/database");
-const dataParser = require("./config/dataparser");
-
-
-dataParser()
-  .then((results) => {
-    console.log(results); // Menampilkan data yang di-parse dari file CSV
-    // Melakukan operasi lain dengan data yang di-parse jika diperlukan
-  })
-  .catch((error) => {
-    console.error(error); // Menampilkan pesan kesalahan jika terjadi error
-  });
+// Mengatur endpoint untuk mengambil semua data
+app.get("/place", (req, res) => {
+  selectQuery()
+    .then((results) => {
+      res.json({
+        status: "success",
+        data: results,
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).json({
+        status: "error",
+        message: "Internal server error",
+      });
+    });
+});
 
 // Mengatur endpoint untuk mengambil data berdasarkan place_id
 app.get("/place/:id", (req, res) => {
@@ -24,7 +32,13 @@ app.get("/place/:id", (req, res) => {
     "SELECT * FROM place_destination WHERE place_id = ?",
     [placeId],
     (error, results) => {
-      if (error) throw error;
+      if (error) {
+        console.error(error);
+        res.status(500).json({
+          status: "error",
+          message: "Internal server error",
+        });
+      }
 
       if (results.length > 0) {
         res.json({
@@ -49,7 +63,13 @@ app.get("/place/search/name", (req, res) => {
     "SELECT * FROM place_destination WHERE place_name LIKE ?",
     [`%${placeName}%`],
     (error, results) => {
-      if (error) throw error;
+      if (error) {
+        console.error(error);
+        res.status(500).json({
+          status: "error",
+          message: "Internal server error",
+        });
+      }
 
       res.json({
         status: "success",
@@ -68,7 +88,13 @@ app.get("/place/search/city", (req, res) => {
     "SELECT * FROM place_destination WHERE city LIKE ?",
     [`%${city}%`],
     (error, results) => {
-      if (error) throw error;
+      if (error) {
+        console.error(error);
+        res.status(500).json({
+          status: "error",
+          message: "Internal server error",
+        });
+      }
 
       res.json({
         status: "success",
@@ -77,5 +103,30 @@ app.get("/place/search/city", (req, res) => {
     }
   );
 });
+
+// Mengatur endpoint untuk mencari data berdasarkan city
+app.get("/place/search/category", (req, res) => {
+    const category = req.query.category;
+  
+    // Melakukan query untuk mencari data berdasarkan city
+    connection.query(
+      "SELECT * FROM place_destination WHERE category LIKE ?",
+      [`%${category}%`],
+      (error, results) => {
+        if (error) {
+          console.error(error);
+          res.status(500).json({
+            status: "error",
+            message: "Internal server error",
+          });
+        }
+  
+        res.json({
+          status: "success",
+          data: results,
+        });
+      }
+    );
+  });
 
 module.exports = app;
