@@ -60,48 +60,62 @@ function verifyToken(req, res, next) {
   });
 }
 
-
 // Endpoint untuk menyimpan favorite place ke Firestore
-app.post("/favorite-place", verifyToken, async (req, res) => {
-  const { placeId } = req.body;
+// Endpoint untuk menyimpan favorite place ke Firestore
+app.post("/favorite_place/:id", verifyToken, async (req, res) => {
+  const { id } = req.params;
 
-  const userId = req.user.uid;
+  // Melakukan query untuk mendapatkan data berdasarkan place_id
+  connection.query(
+    "SELECT * FROM place_destination WHERE place_id = ?",
+    [id],
+    async (error, results) => {
+      if (error) {
+        console.error(error);
+        return res.status(500).json({
+          status: "error",
+          message: "Internal server error",
+        });
+      }
 
-  try {
-    // Menyimpan favorite place di dokumen pengguna
-    const userRef = dbUser.collection("users").doc(userId);
-    const favoritePlaceRef = userRef.collection("favoritePlace");
+      const placeData = JSON.parse(JSON.stringify(results[0]));
 
-    await favoritePlaceRef.add({
-      placeId: placeId,
-    });
+      const userId = req.user.uid;
 
-    console.log("Favorite place berhasil disimpan di Firestore");
-    res.json({
-      message: "Favorite place berhasil disimpan di Firestore",
-    });
-  } catch (error) {
-    console.error("Error saat menyimpan favorite place ke Firestore:", error);
-    res.status(500).json({ error: "Internal server error" });
-  }
+      try {
+        // Menyimpan favorite place di dokumen pengguna
+        const userRef = dbUser.collection("users").doc(userId);
+        const favoritePlaceRef = userRef.collection("favoritePlace");
+
+        await favoritePlaceRef.add({
+          placeId: placeData.place_id,
+          placeName: placeData.place_name,
+          placeDescription: placeData.place_description,
+          placeCategory:placeData.category,
+          placeCity:placeData.city,
+          placePrice:placeData.price,
+          placeRating:placeData.rating,
+          placeDescription_Location:placeData.description_location,
+          placeImg:placeData.place_img,
+          placeGalleryPhotoImg1:placeData.gallery_photo_img1,
+          placeGalleryPhotoImg2:placeData.gallery_photo_img2,
+          placeGalleryPhotoImg3:placeData.gallery_photo_img3
+        });
+
+        console.log("Favorite place berhasil disimpan di Firestore");
+        res.json({
+          message: "Favorite place berhasil disinkronisasi ke Firestore",
+        });
+      } catch (error) {
+        console.error(
+          "Error saat menyimpan favorite place ke Firestore:",
+          error
+        );
+        res.status(500).json({ error: "Internal server error" });
+      }
+    }
+  );
 });
 
-// Mengatur endpoint untuk mengambil semua data
-app.get("/place", (req, res) => {
-  selectQuery()
-    .then((results) => {
-      res.json({
-        status: "success",
-        data: results,
-      });
-    })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).json({
-        status: "error",
-        message: "Internal server error",
-      });
-    });
-});
 
 module.exports = app;
