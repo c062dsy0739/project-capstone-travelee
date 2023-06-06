@@ -27,15 +27,51 @@ function verifyToken(req, res, next) {
   });
 }
 
+// Endpoint untuk login
+app.post('/auth/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Memeriksa apakah semua data terisi
+    if (!email || !password) {
+      return res
+        .status(400)
+        .json({ message: 'Email and password are required' });
+    }
+
+    // Mengautentikasi pengguna menggunakan Firebase Authentication
+    const userRecord = await auth.getUserByEmail(email);
+
+    // Memeriksa apakah pengguna telah memverifikasi email
+    if (!userRecord.emailVerified) {
+      return res.status(400).json({ message: 'Email not verified' });
+    }
+
+    const token = jwt.sign({ uid: userRecord.uid }, 'your-secret-key');
+
+    // Simpan token terbaru ke Firestore
+    const userRef = dbUser.collection('users').doc(userRecord.uid);
+    await userRef.update({ token: token });
+
+    res.status(200).json({ message: 'Login successful', token });
+  } catch (error) {
+    console.error('Login error:', error);
+    res.status(500).json({ message: 'Login failed' });
+  }
+});
+
 // Endpoint untuk menyimpan favorite place ke Firestore
 app.post('/sync-data', verifyToken, async (req, res) => {
-  const { userId, placeId } = req.body;
+  const { placeId } = req.body;
+  const userId = req.user.uid;
 
   try {
     // Menyimpan favorite place di dokumen pengguna
     const userRef = dbUser.collection('users').doc(userId);
-    await userRef.update({
-      favoritePlace: placeId
+    const favoritePlaceRef = userRef.collection('favoritePlace');
+
+    await favoritePlaceRef.add({
+      placeId: placeId
     });
 
     console.log('Favorite place berhasil disimpan di Firestore');
@@ -47,37 +83,37 @@ app.post('/sync-data', verifyToken, async (req, res) => {
 });
 
 // Mengatur endpoint untuk mengambil semua data
-app.get("/place", (req, res) => {
+app.get('/place', (req, res) => {
   selectQuery()
     .then((results) => {
       res.json({
-        status: "success",
+        status: 'success',
         data: results,
       });
     })
     .catch((error) => {
       console.error(error);
       res.status(500).json({
-        status: "error",
-        message: "Internal server error",
+        status: 'error',
+        message: 'Internal server error',
       });
     });
 });
 
 // Mengatur endpoint untuk mengambil data berdasarkan place_id
-app.get("/place/:id", (req, res) => {
+app.get('/place/:id', (req, res) => {
   const placeId = req.params.id;
 
   // Melakukan query untuk mendapatkan data berdasarkan place_id
   connection.query(
-    "SELECT * FROM place_destination WHERE place_id = ?",
+    'SELECT * FROM place_destination WHERE place_id = ?',
     [placeId],
     (error, results) => {
       if (error) {
         console.error(error);
         res.status(500).json({
-          status: "error",
-          message: "Internal server error",
+          status: 'error',
+          message: 'Internal server error',
         });
       } else {
         res.json(results);
@@ -85,6 +121,5 @@ app.get("/place/:id", (req, res) => {
     }
   );
 });
-
 
 module.exports = app;
