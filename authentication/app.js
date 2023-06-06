@@ -14,23 +14,16 @@ app.post("/auth/register", async (req, res) => {
   try {
     const { username, firstname, lastname, email, password } = req.body;
 
-    // Memeriksa apakah semua data terisi
     if (!username || !firstname || !lastname || !email || !password) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
-    // Memeriksa apakah password memenuhi persyaratan
     if (password.length < 8) {
       return res
         .status(400)
         .json({ message: "Password should be at least 8 characters long" });
     }
 
-    // Mencari total pengguna yang sudah terdaftar
-    const userCountSnapshot = await dbAdmin.collection("users").get();
-    const userCount = userCountSnapshot.size;
-
-    // Membuat akun pengguna menggunakan Firebase Authentication
     const userRecord = await auth.createUser({
       email,
       password,
@@ -38,11 +31,9 @@ app.post("/auth/register", async (req, res) => {
       emailVerified: false,
     });
 
-    // Mengirim email verifikasi
     await sendEmailVerification(userRecord);
 
-    // Simpan data user di firebase dengan userId berupa integer
-    const userRef = dbAdmin.collection("users").doc((userCount + 1).toString());
+    const userRef = dbAdmin.collection("users").doc(userRecord.uid);
     await userRef.set({
       username,
       firstname,
@@ -51,7 +42,6 @@ app.post("/auth/register", async (req, res) => {
       password,
     });
 
-    // Generate JWT token
     const token = jwt.sign({ uid: userRecord.uid }, "your-secret-key");
 
     res.status(200).json({ message: "Registration successful", token });
@@ -84,24 +74,20 @@ app.post("/auth/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Memeriksa apakah semua data terisi
     if (!email || !password) {
       return res
         .status(400)
         .json({ message: "Email and password are required" });
     }
 
-    // Mengautentikasi pengguna menggunakan Firebase Authentication
     const userRecord = await auth.getUserByEmail(email);
 
-    // Memeriksa apakah pengguna telah memverifikasi email
     if (!userRecord.emailVerified) {
       return res.status(400).json({ message: "Email not verified" });
     }
 
     const token = jwt.sign({ uid: userRecord.uid }, "your-secret-key");
 
-    //Simpan token terbaru ke Firestore
     const userRef = dbAdmin.collection("users").doc(userRecord.uid);
     await userRef.update({ token: token });
 
