@@ -1,4 +1,4 @@
-const connection = require('../config/database');
+const connection = require('./database');
 
 function selectQuery() {
   return new Promise((resolve, reject) => {
