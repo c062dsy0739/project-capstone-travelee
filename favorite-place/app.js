@@ -46,33 +46,25 @@ function verifyToken(req, res, next) {
   const token = req.headers.authorization;
 
   if (!token) {
-    return res.status(401).json({ message: "Token not provided" });
+    return res.status(401).json({ message: 'Token not provided' });
   }
 
-  // Mengambil decoded token dari Firestore menggunakan token yang disimpan saat login
-  const userRef = dbUser.collection("users").doc(decoded.uid);
-  userRef
-    .get()
-    .then((snapshot) => {
-      const userData = snapshot.data();
-      if (userData && userData.token === token) {
-        // Token valid, tambahkan decoded token ke objek request
-        req.user = decoded;
-        next();
-      } else {
-        // Token tidak valid
-        return res.status(401).json({ message: "Invalid token" });
-      }
-    })
-    .catch((error) => {
-      console.error("Error while verifying token:", error);
-      res.status(500).json({ error: "Internal server error" });
-    });
+  jwt.verify(token, 'your-secret-key', (err, payload) => {
+    if (err) {
+      return res.status(401).json({ message: 'Invalid token' });
+    }
+
+    // Tambahkan payload token ke objek request untuk digunakan di endpoint berikutnya
+    req.user = payload;
+    next();
+  });
 }
 
+
 // Endpoint untuk menyimpan favorite place ke Firestore
-app.post("/sync-data", verifyToken, async (req, res) => {
+app.post("/favorite-place", verifyToken, async (req, res) => {
   const { placeId } = req.body;
+
   const userId = req.user.uid;
 
   try {
@@ -86,7 +78,7 @@ app.post("/sync-data", verifyToken, async (req, res) => {
 
     console.log("Favorite place berhasil disimpan di Firestore");
     res.json({
-      message: "Favorite place berhasil disinkronisasi ke Firestore",
+      message: "Favorite place berhasil disimpan di Firestore",
     });
   } catch (error) {
     console.error("Error saat menyimpan favorite place ke Firestore:", error);
@@ -110,28 +102,6 @@ app.get("/place", (req, res) => {
         message: "Internal server error",
       });
     });
-});
-
-// Mengatur endpoint untuk mengambil data berdasarkan place_id
-app.get("/place/:id", (req, res) => {
-  const placeId = req.params.id;
-
-  // Melakukan query untuk mendapatkan data berdasarkan place_id
-  connection.query(
-    "SELECT * FROM place_destination WHERE place_id = ?",
-    [placeId],
-    (error, results) => {
-      if (error) {
-        console.error(error);
-        res.status(500).json({
-          status: "error",
-          message: "Internal server error",
-        });
-      } else {
-        res.json(results);
-      }
-    }
-  );
 });
 
 module.exports = app;
