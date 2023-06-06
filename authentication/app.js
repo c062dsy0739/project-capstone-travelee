@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require ("express");
 //const bodyParser = require("body-parser");
 const { auth, dbAdmin } = require("./database/firebase-config");
 const {
@@ -8,7 +8,6 @@ const {
 const jwt = require("jsonwebtoken");
 
 const app = express();
-//app.use(bodyParser.json());
 app.use(express.json());
 
 app.post("/auth/register", async (req, res) => {
@@ -27,6 +26,10 @@ app.post("/auth/register", async (req, res) => {
         .json({ message: "Password should be at least 8 characters long" });
     }
 
+    // Mencari total pengguna yang sudah terdaftar
+    const userCountSnapshot = await dbAdmin.collection("users").get();
+    const userCount = userCountSnapshot.size;
+
     // Membuat akun pengguna menggunakan Firebase Authentication
     const userRecord = await auth.createUser({
       email,
@@ -38,16 +41,8 @@ app.post("/auth/register", async (req, res) => {
     // Mengirim email verifikasi
     await sendEmailVerification(userRecord);
 
-    // // Menyimpan data pengguna ke Firebase Database
-    // await dbAdmin.ref(`users/${userRecord.uid}`).set({
-    //   username,
-    //   firstname,
-    //   lastname,
-    //   email,
-    // });
-
-    //Simpan data user di firebase
-    const userRef = dbAdmin.collection("users").doc(userRecord.uid);
+    // Simpan data user di firebase dengan userId berupa integer
+    const userRef = dbAdmin.collection("users").doc((userCount + 1).toString());
     await userRef.set({
       username,
       firstname,
