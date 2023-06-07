@@ -1,0 +1,15 @@
+{
+  "name": "travelee-event",
+  "version": "1.0.0",
+  "description": "event",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "author": "noor-rei",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
