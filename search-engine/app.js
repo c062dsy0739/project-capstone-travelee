@@ -1,12 +1,12 @@
 const express = require("express");
-const app = express();
+const app2 = express();
 const connection = require("./config/database");
 const selectQuery = require("./config/dataparser");
 
-app.use(express.json());
+app2.use(express.json());
 
 // Mengatur endpoint untuk mengambil semua data
-app.get("/place", (req, res) => {
+app2.get("/place", (req, res) => {
   selectQuery()
     .then((results) => {
       res.json({
@@ -24,7 +24,7 @@ app.get("/place", (req, res) => {
 });
 
 // Mengatur endpoint untuk mengambil data berdasarkan place_id
-app.get("/place/:id", (req, res) => {
+app2.get("/place/:id", (req, res) => {
   const placeId = req.params.id;
 
   // Melakukan query untuk mendapatkan data berdasarkan place_id
@@ -55,7 +55,7 @@ app.get("/place/:id", (req, res) => {
 });
 
 // Mengatur endpoint untuk mencari data berdasarkan place_name
-app.get("/place/search/name", (req, res) => {
+app2.get("/place/search/name", (req, res) => {
   const placeName = req.query.name;
 
   // Melakukan query untuk mencari data berdasarkan place_name
@@ -80,7 +80,7 @@ app.get("/place/search/name", (req, res) => {
 });
 
 // Mengatur endpoint untuk mencari data berdasarkan city
-app.get("/place/search/city", (req, res) => {
+app2.get("/place/search/city", (req, res) => {
   const city = req.query.city;
 
   // Melakukan query untuk mencari data berdasarkan city
@@ -105,7 +105,7 @@ app.get("/place/search/city", (req, res) => {
 });
 
 // Mengatur endpoint untuk mencari data berdasarkan city
-app.get("/place/search/category", (req, res) => {
+app2.get("/place/search/category", (req, res) => {
     const category = req.query.category;
   
     // Melakukan query untuk mencari data berdasarkan city
@@ -129,4 +129,4 @@ app.get("/place/search/category", (req, res) => {
     );
   });
 
-module.exports = app;
+module.exports = app2;

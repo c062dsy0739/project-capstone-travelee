@@ -1,12 +1,12 @@
 const express = require("express");
-const app = express();
+const app4 = express();
 const connection = require("./config/database");
 const selectQuery = require("./config/dataparser");
 
-app.use(express.json());
+app4.use(express.json());
 
 // Mengatur endpoint untuk mengambil semua data
-app.get("/event", (req, res) => {
+app4.get("/event", (req, res) => {
   selectQuery()
     .then((results) => {
       res.json({
@@ -23,4 +23,4 @@ app.get("/event", (req, res) => {
     });
 });
 
-module.exports = app;
+module.exports = app4;

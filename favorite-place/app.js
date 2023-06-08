@@ -5,11 +5,11 @@ const selectQuery = require("./mysql/dataparser");
 const jwt = require("jsonwebtoken");
 
 // Inisialisasi aplikasi Express
-const app = express();
-app.use(express.json());
+const app3 = express();
+app3.use(express.json());
 
 // Endpoint untuk login
-app.post("/auth/login", async (req, res) => {
+app3.post("/auth/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -62,7 +62,7 @@ function verifyToken(req, res, next) {
 
 // Endpoint untuk menyimpan favorite place ke Firestore
 // Endpoint untuk menyimpan favorite place ke Firestore
-app.post("/favorite_place/:id", verifyToken, async (req, res) => {
+app3.post("/favorite_place/:id", verifyToken, async (req, res) => {
   const { id } = req.params;
 
   // Melakukan query untuk mendapatkan data berdasarkan place_id
@@ -118,4 +118,4 @@ app.post("/favorite_place/:id", verifyToken, async (req, res) => {
 });
 
 
-module.exports = app;
+module.exports = app3;

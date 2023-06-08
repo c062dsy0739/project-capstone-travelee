@@ -7,10 +7,10 @@ const {
 } = require("./database/send-email-verification");
 const jwt = require("jsonwebtoken");
 
-const app = express();
-app.use(express.json());
+const app1 = express();
+app1.use(express.json());
 
-app.post("/auth/register", async (req, res) => {
+app1.post("/auth/register", async (req, res) => {
   try {
     const { username, firstname, lastname, email, password } = req.body;
 
@@ -70,7 +70,7 @@ function verifyToken(req, res, next) {
   });
 }
 
-app.post("/auth/login", async (req, res) => {
+app1.post("/auth/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -99,7 +99,7 @@ app.post("/auth/login", async (req, res) => {
 });
 
 //Validasi Email --> Forgot Password
-app.post("/auth/users/forgot-password", async (req, res) => {
+app1.post("/auth/users/forgot-password", async (req, res) => {
   const { email } = req.body;
 
   // Memeriksa apakah email terdaftar
@@ -119,7 +119,7 @@ app.post("/auth/users/forgot-password", async (req, res) => {
 });
 
 // Membuat kata sandi baru
-app.put("/auth/users/reset-password/:id", async (req, res) => {
+app1.put("/auth/users/reset-password/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const { newPassword, confirmPassword } = req.body;
@@ -158,7 +158,7 @@ app.put("/auth/users/reset-password/:id", async (req, res) => {
 });
 
 // user logout
-app.post("/auth/logout", async (req, res) => {
+app1.post("/auth/logout", async (req, res) => {
   try {
     const { token } = req.body;
 
@@ -181,7 +181,7 @@ app.post("/auth/logout", async (req, res) => {
 });
 
 //Memunculkan nama pengguna di user profile
-app.get("/auth/users/profile", async (req, res) => {
+app1.get("/auth/users/profile", async (req, res) => {
   try {
     const { token } = req.headers; // atau gunakan metode autentikasi sesuai kebutuhan
     // Ambil data pengguna berdasarkan token dari Firestore
@@ -204,7 +204,7 @@ app.get("/auth/users/profile", async (req, res) => {
 });
 
 //Memunculkan data user di halaman personal information
-app.get("/auth/users/profile-information", async (req, res) => {
+app1.get("/auth/users/profile-information", async (req, res) => {
     try {
       const { token } = req.headers; // atau gunakan metode autentikasi sesuai kebutuhan
       // Ambil data pengguna berdasarkan token dari Firestore
@@ -226,4 +226,4 @@ app.get("/auth/users/profile-information", async (req, res) => {
     }
   });
 
-module.exports = app;
+module.exports = app1;

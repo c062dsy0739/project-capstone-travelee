@@ -1,0 +1,14 @@
+{
+  "name": "testing-app-engine",
+  "version": "1.0.0",
+  "description": "testing_app_engine",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "author": "noor-rei",
+  "license": "ISC"
+}
