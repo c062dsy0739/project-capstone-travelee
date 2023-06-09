@@ -1,7 +1,7 @@
 const express = require("express");
-const { auth, dbUser } = require("./firebase/firebase-config");
-const connection = require("./mysql/database");
-const selectQuery = require("./mysql/dataparser");
+const { auth, dbAdmin } = require("../authentication/database/firebase-config");
+const connection = require("../search-engine/config/database");
+const selectQuery = require("../search-engine/config/dataparser");
 const jwt = require("jsonwebtoken");
 
 // Inisialisasi aplikasi Express
@@ -31,7 +31,7 @@ app3.post("/auth/login", async (req, res) => {
     const token = jwt.sign({ uid: userRecord.uid }, "your-secret-key");
 
     // Simpan token terbaru ke Firestore
-    const userRef = dbUser.collection("users").doc(userRecord.uid);
+    const userRef = dbAdmin.collection("users").doc(userRecord.uid);
     await userRef.update({ token: token });
 
     res.status(200).json({ message: "Login successful", token });
@@ -42,25 +42,25 @@ app3.post("/auth/login", async (req, res) => {
 });
 
 // Middleware untuk verifikasi token JWT
+// Middleware untuk verifikasi token JWT
 function verifyToken(req, res, next) {
-  const token = req.headers.authorization;
-
-  if (!token) {
-    return res.status(401).json({ message: 'Token not provided' });
-  }
-
-  jwt.verify(token, 'your-secret-key', (err, payload) => {
-    if (err) {
-      return res.status(401).json({ message: 'Invalid token' });
+    const token = req.headers.authorization;
+  
+    if (!token) {
+      return res.status(401).json({ message: 'Token not provided' });
     }
-
-    // Tambahkan payload token ke objek request untuk digunakan di endpoint berikutnya
-    req.user = payload;
-    next();
-  });
+  
+    jwt.verify(token, 'your-secret-key', (err, payload) => {
+      if (err) {
+        return res.status(401).json({ message: 'Invalid token' });
+      }
+  
+      // Tambahkan payload token ke objek request untuk digunakan di endpoint berikutnya
+      req.user = payload;
+      next();
+    });
 }
 
-// Endpoint untuk menyimpan favorite place ke Firestore
 // Endpoint untuk menyimpan favorite place ke Firestore
 app3.post("/favorite_place/:id", verifyToken, async (req, res) => {
   const { id } = req.params;
@@ -84,7 +84,7 @@ app3.post("/favorite_place/:id", verifyToken, async (req, res) => {
 
       try {
         // Menyimpan favorite place di dokumen pengguna
-        const userRef = dbUser.collection("users").doc(userId);
+        const userRef = dbAdmin.collection("users").doc(userId);
         const favoritePlaceRef = userRef.collection("favoritePlace");
 
         await favoritePlaceRef.add({

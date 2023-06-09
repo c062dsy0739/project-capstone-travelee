@@ -13,4 +13,8 @@ index.use('/search-engine', app2);
 index.use('/favorite-place', app3);
 index.use('/event', app4);
 
-module.exports = index;
+// Menambahkan konfigurasi server
+const PORT = process.env.PORT || 8080;
+index.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

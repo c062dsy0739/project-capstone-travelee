@@ -1,7 +1,7 @@
 const express = require("express");
 const app4 = express();
-const connection = require("./config/database");
-const selectQuery = require("./config/dataparser");
+const connection = require("../search-engine/config/database");
+const selectQuery = require("../search-engine/config/dataparser");
 
 app4.use(express.json());
 
