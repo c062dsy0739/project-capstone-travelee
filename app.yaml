@@ -4,5 +4,17 @@ instance_class: F2
 env_variables:
   NODE_ENV: production
 handlers:
+  - url: /authentication/.*
+    script: auto
+
+  - url: /search-engine/.*
+    script: auto
+
+  - url: /favorite-place/.*
+    script: auto
+
+  - url: /event/.*
+    script: auto
+
   - url: /.*
     script: auto
