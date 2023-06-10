@@ -1,10 +1,6 @@
-const express = require ("express");
-//const bodyParser = require("body-parser");
+const express = require("express");
 const { auth, dbAdmin } = require("./database/firebase-config");
-const {
-  sendEmailVerification,
-  sendPasswordReset,
-} = require("./database/send-email-verification");
+const { sendEmailVerification, sendPasswordReset } = require("./database/send-email-verification");
 const jwt = require("jsonwebtoken");
 
 const app1 = express();
@@ -24,6 +20,9 @@ app1.post("/auth/register", async (req, res) => {
         .json({ message: "Password should be at least 8 characters long" });
     }
 
+    const userSnapshot = await dbAdmin.collection("users").get();
+    const userCount = userSnapshot.size;
+
     const userRecord = await auth.createUser({
       email,
       password,
@@ -35,12 +34,15 @@ app1.post("/auth/register", async (req, res) => {
 
     const userRef = dbAdmin.collection("users").doc(userRecord.uid);
     await userRef.set({
+      user_id: userCount + 1,
       username,
       firstname,
       lastname,
       email,
       password,
     });
+
+    const userId = userRecord.uid; // Mengambil user ID yang dibuat
 
     const token = jwt.sign({ uid: userRecord.uid }, "your-secret-key");
 
