@@ -40,7 +40,6 @@ app1.post("/auth/register", async (req, res) => {
     if (!user_category.every((category) => availableCategories.includes(category))) {
       return res.status(400).json({ message: "Invalid category" });
     }
-    
 
     const userSnapshot = await dbAdmin.collection("users").get();
     const userCount = userSnapshot.size;
@@ -62,14 +61,14 @@ app1.post("/auth/register", async (req, res) => {
       lastname,
       email,
       password,
-      user_category: [category1, category2, category3], // Menyimpan preferensi kategori ke database
+      user_category:[category1, category2, category3]// Menyimpan preferensi kategori ke database
     });
-
+``
     const userId = userRecord.uid; // Mengambil user ID yang dibuat
     // Mengirim data pengguna ke endpoint Flask
     await axios.post("http://localhost:5000/predict1/preference", {
       user_id: userId,
-      user_category: req.body.user_category,
+      user_category: [category1, category2, category3]
     });
 
     res.status(200).json({ message: "Registration successful" });
