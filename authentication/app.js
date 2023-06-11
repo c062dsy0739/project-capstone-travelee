@@ -1,14 +1,19 @@
 const express = require("express");
 const { auth, dbAdmin } = require("./database/firebase-config");
-const { sendEmailVerification, sendPasswordReset } = require("./database/send-email-verification");
+const {
+  sendEmailVerification,
+  sendPasswordReset,
+} = require("./database/send-email-verification");
 const jwt = require("jsonwebtoken");
+const axios = require("axios");
 
 const app1 = express();
 app1.use(express.json());
 
 app1.post("/auth/register", async (req, res) => {
   try {
-    const { username, firstname, lastname, email, password } = req.body;
+    const { username, firstname, lastname, email, password, user_category } =
+      req.body;
 
     if (!username || !firstname || !lastname || !email || !password) {
       return res.status(400).json({ message: "All fields are required" });
@@ -19,6 +24,23 @@ app1.post("/auth/register", async (req, res) => {
         .status(400)
         .json({ message: "Password should be at least 8 characters long" });
     }
+
+    const availableCategories = [
+      "Bahari",
+      "Budaya",
+      "Taman Nasional",
+      "Taman Hiburan",
+      "Cagar Alam",
+      "Desa Wisata",
+    ];
+    const category1 = user_category[0];
+    const category2 = user_category[1];
+    const category3 = user_category[2];
+
+    if (!user_category.every((category) => availableCategories.includes(category))) {
+      return res.status(400).json({ message: "Invalid category" });
+    }
+    
 
     const userSnapshot = await dbAdmin.collection("users").get();
     const userCount = userSnapshot.size;
@@ -40,13 +62,17 @@ app1.post("/auth/register", async (req, res) => {
       lastname,
       email,
       password,
+      user_category: [category1, category2, category3], // Menyimpan preferensi kategori ke database
     });
 
     const userId = userRecord.uid; // Mengambil user ID yang dibuat
+    // Mengirim data pengguna ke endpoint Flask
+    await axios.post("http://localhost:5000/predict1/preference", {
+      user_id: userId,
+      user_category: req.body.user_category,
+    });
 
-    const token = jwt.sign({ uid: userRecord.uid }, "your-secret-key");
-
-    res.status(200).json({ message: "Registration successful", token });
+    res.status(200).json({ message: "Registration successful" });
   } catch (error) {
     console.error("Registration error:", error);
     res.status(500).json({ message: "Registration failed" });
@@ -207,25 +233,25 @@ app1.get("/auth/users/profile", async (req, res) => {
 
 //Memunculkan data user di halaman personal information
 app1.get("/auth/users/profile-information", async (req, res) => {
-    try {
-      const { token } = req.headers; // atau gunakan metode autentikasi sesuai kebutuhan
-      // Ambil data pengguna berdasarkan token dari Firestore
-      const userSnapshot = await dbAdmin
-        .collection("users")
-        .where("token", "==", token)
-        .get();
-  
-      if (!userSnapshot.empty) {
-        const userData = userSnapshot.docs[0].data();
-        const { username, firstname, lastname, email } = userData;
-        res.status(200).json({ username, firstname, lastname, email });
-      } else {
-        res.status(404).json({ message: "User not found" });
-      }
-    } catch (error) {
-      console.error("Fetch user profile error:", error);
-      res.status(500).json({ message: "Failed to fetch user profile" });
+  try {
+    const { token } = req.headers; // atau gunakan metode autentikasi sesuai kebutuhan
+    // Ambil data pengguna berdasarkan token dari Firestore
+    const userSnapshot = await dbAdmin
+      .collection("users")
+      .where("token", "==", token)
+      .get();
+
+    if (!userSnapshot.empty) {
+      const userData = userSnapshot.docs[0].data();
+      const { username, firstname, lastname, email } = userData;
+      res.status(200).json({ username, firstname, lastname, email });
+    } else {
+      res.status(404).json({ message: "User not found" });
     }
-  });
+  } catch (error) {
+    console.error("Fetch user profile error:", error);
+    res.status(500).json({ message: "Failed to fetch user profile" });
+  }
+});
 
 module.exports = app1;
