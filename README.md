@@ -32,7 +32,9 @@ After the tourist attraction data is transformed into a matrix using TF-IDF Vect
 A place name selected by the user is retrieved.
 
 **Table 1. User-selected Place Name**
-<img width="663" alt="image" src="https://github.com/c062dsy0739/project-capstone-travelee/assets/83300254/94e4f28f-941b-408a-bfd4-356e8006dfa0">
+| place_name                |category |
+| :-------------------------|:-------:|
+| Saung Angklung Mang Udjo  | Budaya  |
 
 Here are the results of place name recommendations based on the same category.
 
