@@ -1,0 +1,6 @@
+runtime: python39
+instance_class: F4
+service: model
+entrypoint: gunicorn -b :$PORT collab-content:app
+env_variables:
+  GOOGLE_APPLICATION_CREDENTIALS: serviceAccountKey.json
