@@ -19,4 +19,4 @@ Cosine similarity is used to measure the level of similarity between two place d
 * Best Recommended Results
 After the tourist attraction data is transformed into a matrix using TF-IDF Vectorizer, and the similarity between place names is determined using cosine similarity, the next step is to conduct testing on the recommendation system using the content-based filtering approach. The following are the observed results of the testing:
 
-  **2. Collaborative Filtering Recommendation**
+**2. Collaborative Filtering Recommendation**
