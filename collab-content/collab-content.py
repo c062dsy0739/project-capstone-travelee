@@ -8,8 +8,6 @@ from flask import Flask, request, jsonify
 from keras.models import load_model
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from google.cloud import storage
-from google.oauth2 import service_account
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
@@ -128,18 +126,14 @@ def recommend_places(user_id):
     return recommendations
 
 #Routing CC
-@app.route('/predict3/popular-place', methods=['GET'])
-def predict3():
-    data = request.get_json()  # Get the input data from the request
-    
-    # Extract the input parameters
-    user_id = data['user_id']
-    
+@app.route('/predict3/popular-place/<user_id>', methods=['GET'])
+def predict3(user_id):
     # Call the recommend_places function
     recommendations = recommend_places(user_id)
     
     # Return the JSON response
     return jsonify(recommendations)
+
 
 @app.route('/')
 def hello_world():
@@ -147,4 +141,4 @@ def hello_world():
  
 if __name__ == '__main__':
     # Start the Flask app
-    app.run()
+    app.run(host='0.0.0.0' , port=8000)
