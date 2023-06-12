@@ -11,7 +11,7 @@ To build our recommendation system, we were inspired by this data [here](https:/
 * numpy
 * pandas
 * scikit-learn
-* matplotlib
+* matplotlib 
 
 ## **Modeling**
 
