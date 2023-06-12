@@ -71,24 +71,27 @@ From the machine learning model that has been built using embedding and regulari
 
 * Recommendation Result
 
-Based on the results of the place recommendations above, it can be seen that the recommendation system takes a random user (62), then searches for places with the best rating from the user.
-  - Taman Wisata Alam Gunung Geulis: Budaya,Cagar Alam
-  - Taman Nasional Berbak: Cagar Alam,Taman Nasional
+  Based on the results of the place recommendations, it can be seen that the recommendation system takes a random user (62), then searches for places with the best rating from the user.
+  
+  - Taman Wisata Alam Gunung Geulis: Budaya, Cagar Alam
+  - Taman Nasional Berbak: Cagar Alam, Taman Nasional
   - Hutan Mangrove Kulon Progo: Cagar Alam
-  - Taman Nasional Komodo: Bahari,Taman Hiburan,Taman Nasional
-  - Pantai Samas : Bahari,Cagar Alam
+  - Taman Nasional Komodo: Bahari, Taman Hiburan, Taman Nasional
+  - Pantai Samas: Bahari, Cagar Alam
 
-Furthermore, the system will display a list of 10 recommended ecotourism places based on the category that the random user had. It can be seen that the system recommends several places with the same category.
+  Furthermore, the system will display a list of 10 recommended ecotourism places based on the category that the random user had. It can be seen that the system recommends several places with the same category.
+  
   - Desa Wisata Jodipan: Budaya
-  - Taman Wisata Alam Puncak Banyu Biru: Budaya,Cagar Alam
-  - Taman Wisata Alam Hutan Albasia: Budaya,Cagar Alam
-  - Taman Nasional Kutai: Cagar Alam,Taman Nasional
-  - Pantai Watu Kodok: Bahari,Cagar Alam
-  - Pantai Wediombo: Bahari,Cagar Alam
+  - Taman Wisata Alam Puncak Banyu Biru: Budaya, Cagar Alam
+  - Taman Wisata Alam Hutan Albasia: Budaya, Cagar Alam
+  - Taman Nasional Kutai: Cagar Alam, Taman Nasional
+  - Pantai Watu Kodok: Bahari, Cagar Alam
+  - Pantai Wediombo: Bahari, Cagar Alam
   - Puncak Gunung Api Purba - Nglanggeran: Cagar Alam
-  - Puncak Pinus Becici: Cagar Alam,Taman Hiburan
-  - Sindu Kusuma Edupark (SKE): Cagar Alam,Taman Hiburan
+  - Puncak Pinus Becici: Cagar Alam, Taman Hiburan
+  - Sindu Kusuma Edupark (SKE): Cagar Alam, Taman Hiburan
   - Watu Lumbung: Cagar Alam
+
 
 ## **Conclusion**
 
