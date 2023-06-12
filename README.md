@@ -39,7 +39,13 @@ A place name selected by the user is retrieved.
 Here are the results of place name recommendations based on the same category.
 
 **Table 2. Content-based Filtering Recommendation Results**
-<img width="422" alt="image" src="https://github.com/c062dsy0739/project-capstone-travelee/assets/83300254/716c38f7-6ebe-410d-8e7e-9d45e3e31fb1">
+| place_name                |category |
+| :-------------------------|:-------:|
+| Candi Gedong Songo	       | Budaya  |
+| Setu Babakan	             | Budaya  |
+| Desa Wisata Sade	         | Budaya  |
+| Museum Ullen Sentalu	     | Budaya  |
+| Desa Wisata Jodipan	      | Budaya  |
 
 Based on the recommendation results above, it can be seen that the system created successfully provides recommendations for a place, namely 'Saung Angklung Mang Udjo' and generated place recommendations with the same category, namely culture.
 
@@ -56,9 +62,13 @@ The dataset split process starts by randomizing the eco_rating dataset, then sep
 From the machine learning model that has been built using embedding and regularizer layers, as well as adam optimizer, Mean Squared Error loss function, and RMSE (Root Mean Squared Error) metrics, the results of testing the ecotourism recommendation system with a collaborative filtering recommendation system are obtained.
 
 * Recommendation Result
-Berdasarkan hasil rekomendasi tempat di atas, dapat dilihat bahwa sistem rekomendasi mengambil pengguna acak (62), lalu dilakukan pencarian tempat dengan rating terbaik dari user tersebut.
-<img width="311" alt="image" src="https://github.com/c062dsy0739/project-capstone-travelee/assets/83300254/613e309c-47e1-420b-9762-f4e8171cbf6b">
+Based on the results of the place recommendations above, it can be seen that the recommendation system takes a random user (62), then searches for places with the best rating from the user.
+** Taman Wisata Alam Gunung Geulis: Budaya,Cagar Alam
+** Taman Nasional Berbak: Cagar Alam,Taman Nasional
+** Hutan Mangrove Kulon Progo: Cagar Alam
+** Taman Nasional Komodo: Bahari,Taman Hiburan,Taman Nasional
+** Pantai Samas : Bahari,Cagar Alam
 
-Selanjutnya, sistem akan menampilkan 10 daftar tempat ecotourism yang direkomendasikan berdasarkan kategori yang dimiliki terhadap pengguna acak tadi. Berdasarkan gambar di bawah ini, dapat dilihat bahwa sistem merekomendasikan beberapa tempat dengan kategori yang sama.
+Furthermore, the system will display a list of 10 recommended ecotourism places based on the category that the random user had. It can be seen that the system recommends several places with the same category.
 <img width="287" alt="image" src="https://github.com/c062dsy0739/project-capstone-travelee/assets/83300254/bdf4b04c-1c96-401b-b059-d9503e7f7a2e">
 
