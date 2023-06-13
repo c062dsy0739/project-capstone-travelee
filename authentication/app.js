@@ -125,7 +125,7 @@ app1.post("/auth/login", async (req, res) => {
   }
 });
 
-//Validasi Email --> Forgot Password
+// Validasi Email --> Forgot Password
 app1.post("/auth/users/forgot-password", async (req, res) => {
   const { email } = req.body;
 
@@ -137,15 +137,23 @@ app1.post("/auth/users/forgot-password", async (req, res) => {
 
   if (userSnapshot.empty || userSnapshot.docs[0].data().email !== email) {
     return res.status(404).json({ message: "User not found" });
-  } else{
-    res.status(200).json({ message: "User found" )};
+  } else {
+    res.status(200).json({ message: "User found" });
   }
 
-  const userRecord = await auth.getUserByEmail(email);
+  try {
+    const userRecord = await auth.getUserByEmail(email);
 
-  // Lanjutkan dengan pengiriman email verifikasi atau token reset password
-  await sendPasswordReset(userRecord);
+    // Lanjutkan dengan pengiriman email verifikasi atau token reset password
+    await sendPasswordReset(userRecord);
+
+    res.status(200).json({ message: "Password reset email sent" });
+  } catch (error) {
+    console.error("Forgot password error:", error);
+    res.status(500).json({ message: "Password reset failed" });
+  }
 });
+
 
 // Membuat kata sandi baru
 app1.put("/auth/users/reset-password/:id", async (req, res) => {
