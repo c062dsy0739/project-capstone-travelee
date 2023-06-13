@@ -66,7 +66,7 @@ app1.post("/auth/register", async (req, res) => {
 ``
     const userId = userRecord.uid; // Mengambil user ID yang dibuat
     // Mengirim data pengguna ke endpoint Flask
-    await axios.post("https://collab-content-4karhhkfca-et.a.run.app/predict1/preference", {
+    await axios.post("https://collab-content-4karhhkfca-et.a.run.app/predict1/preference/<user_id>", {
       user_id: userId,
       user_category: [category1, category2, category3]
     });
