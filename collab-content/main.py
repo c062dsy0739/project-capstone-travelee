@@ -115,30 +115,29 @@ def recommend_places(user_id):
             "place_name": row.place_name,
             "category": row.category
         })
-
+    
     recommended_places = df_places[df_places['place_id'].isin(recommended_place_ids)]
     for row in recommended_places.itertuples():
         recommendations.append({
             "place_name": row.place_name,
             "category": row.category
         })
-        
+    
     return recommendations
 
+
 #Routing CC
-@app.route('/predict3/popular-place/<user_id>', methods=['GET'])
+@app.route('/predict3/popular-place/<int:user_id>', methods=['GET'])
 def predict3(user_id):
     # Call the recommend_places function
-    recommendations = recommend_places(user_id)
+    recommendations = recommend_places(int(user_id))
     
     # Return the JSON response
     return jsonify(recommendations)
-
 
 @app.route('/')
 def hello_world():
     return 'Hello world'
  
-if __name__ == '__main__':
-    # Start the Flask app
-    app.run(host='0.0.0.0' , port=8000)
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
