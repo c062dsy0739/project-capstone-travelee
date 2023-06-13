@@ -5,7 +5,6 @@ const {
   sendPasswordReset,
 } = require("./database/send-email-verification");
 const jwt = require("jsonwebtoken");
-const axios = require("axios");
 
 const app1 = express();
 app1.use(express.json());
@@ -63,14 +62,7 @@ app1.post("/auth/register", async (req, res) => {
       password,
       user_category:[category1, category2, category3]// Menyimpan preferensi kategori ke database
     });
-``
-    const userId = userRecord.uid; // Mengambil user ID yang dibuat
-    // Mengirim data pengguna ke endpoint Flask
-    await axios.post("https://collab-content-4karhhkfca-et.a.run.app/predict1/preference/<user_id>", {
-      user_id: userId,
-      user_category: [category1, category2, category3]
-    });
-
+    
     res.status(200).json({ message: "Registration successful" });
   } catch (error) {
     console.error("Registration error:", error);
