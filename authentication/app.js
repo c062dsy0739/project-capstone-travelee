@@ -137,6 +137,8 @@ app1.post("/auth/users/forgot-password", async (req, res) => {
 
   if (userSnapshot.empty || userSnapshot.docs[0].data().email !== email) {
     return res.status(404).json({ message: "User not found" });
+  } else{
+    res.status(200).json({ message: "User found" )};
   }
 
   const userRecord = await auth.getUserByEmail(email);
