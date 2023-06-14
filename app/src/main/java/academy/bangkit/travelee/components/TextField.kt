@@ -1,5 +1,7 @@
 package academy.bangkit.travelee.components
 
+import academy.bangkit.travelee.ui.theme.TraveleeYellow
+import academy.bangkit.travelee.ui.theme.TraveleeYellow2
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -19,8 +21,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.travelee.signing.ui.theme.TraveleeYellow
-import com.travelee.signing.ui.theme.TraveleeYellow2
 
 // stateless function of customtextfield
 @OptIn(ExperimentalMaterial3Api::class)

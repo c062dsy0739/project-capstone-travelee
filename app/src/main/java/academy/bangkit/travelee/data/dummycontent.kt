@@ -1,6 +1,7 @@
 package academy.bangkit.travelee.data
 
-import com.travelee.signing.model.ContentModel
+import academy.bangkit.travelee.model.ContentModel
+
 
 object GuidelineData {
     val data = listOf(

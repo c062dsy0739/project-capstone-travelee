@@ -1,6 +1,8 @@
 package academy.bangkit.travelee.components
 
 
+import academy.bangkit.travelee.utilities.Constants.REVOKE_ACCESS_ITEM
+import academy.bangkit.travelee.utilities.Constants.SIGN_OUT_ITEM
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,8 +21,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.travelee.signing.utilities.Constants.REVOKE_ACCESS_ITEM
-import com.travelee.signing.utilities.Constants.SIGN_OUT_ITEM
 
 @Composable
 fun TopBar(

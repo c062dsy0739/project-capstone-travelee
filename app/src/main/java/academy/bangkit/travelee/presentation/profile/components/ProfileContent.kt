@@ -1,5 +1,8 @@
 package academy.bangkit.travelee.presentation.profile.components
 
+import academy.bangkit.travelee.R
+import academy.bangkit.travelee.components.PrimaryButton
+import academy.bangkit.travelee.ui.theme.TraveleeGrey
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -21,9 +24,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.travelee.signing.R
-import com.travelee.signing.components.PrimaryButton
-import com.travelee.signing.ui.theme.TraveleeGrey
 
 @Composable
 fun ProfileContent(

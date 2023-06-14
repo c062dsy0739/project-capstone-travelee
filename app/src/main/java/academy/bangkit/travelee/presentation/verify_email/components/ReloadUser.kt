@@ -1,11 +1,13 @@
 package academy.bangkit.travelee.presentation.verify_email.components
 
+import academy.bangkit.travelee.components.ProgressBar
+import academy.bangkit.travelee.domain.model.Response.Failure
+import academy.bangkit.travelee.domain.model.Response.Loading
+import academy.bangkit.travelee.domain.model.Response.Success
+import academy.bangkit.travelee.presentation.profile.ProfileViewModel
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.travelee.signing.components.ProgressBar
-import com.travelee.signing.domain.model.Response.*
-import com.travelee.signing.presentation.profile.ProfileViewModel
 
 @Composable
 fun ReloadUser(

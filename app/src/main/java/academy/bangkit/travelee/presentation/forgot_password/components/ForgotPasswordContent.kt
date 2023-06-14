@@ -1,5 +1,14 @@
 package academy.bangkit.travelee.presentation.forgot_password.components
 
+import academy.bangkit.travelee.components.EmailField
+import academy.bangkit.travelee.components.SmallSpacer
+import academy.bangkit.travelee.components.fontFamily
+import academy.bangkit.travelee.components.fontFamily2
+import academy.bangkit.travelee.ui.theme.TraveleeGreen
+import academy.bangkit.travelee.ui.theme.TraveleeGrey
+import academy.bangkit.travelee.utilities.Constants.EMPTY_STRING
+import academy.bangkit.travelee.utilities.Constants.RESET_PASSWORD
+import academy.bangkit.travelee.utilities.Constants.RESET_PASSWORD_BUTTON
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -24,15 +33,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.travelee.signing.components.EmailField
-import com.travelee.signing.components.SmallSpacer
-import com.travelee.signing.components.fontFamily
-import com.travelee.signing.screen.fontFamily2
-import com.travelee.signing.ui.theme.TraveleeGreen
-import com.travelee.signing.ui.theme.TraveleeGrey
-import com.travelee.signing.utilities.Constants.EMPTY_STRING
-import com.travelee.signing.utilities.Constants.RESET_PASSWORD
-import com.travelee.signing.utilities.Constants.RESET_PASSWORD_BUTTON
 
 @Composable
 fun ForgotPasswordContent(

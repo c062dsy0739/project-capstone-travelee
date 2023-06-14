@@ -1,21 +1,21 @@
 package academy.bangkit.travelee.presentation.profile.components
 
+import academy.bangkit.travelee.components.ProgressBar
+import academy.bangkit.travelee.domain.model.Response.Failure
+import academy.bangkit.travelee.domain.model.Response.Loading
+import academy.bangkit.travelee.domain.model.Response.Success
+import academy.bangkit.travelee.presentation.profile.ProfileViewModel
+import academy.bangkit.travelee.utilities.Constants.ACCESS_REVOKED_MESSAGE
+import academy.bangkit.travelee.utilities.Constants.REVOKE_ACCESS_MESSAGE
+import academy.bangkit.travelee.utilities.Constants.SENSITIVE_OPERATION_MESSAGE
+import academy.bangkit.travelee.utilities.Constants.SIGN_OUT_ITEM
+import academy.bangkit.travelee.utilities.Utils.Companion.showMessage
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.SnackbarResult
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.travelee.signing.components.ProgressBar
-import com.travelee.signing.domain.model.Response.Failure
-import com.travelee.signing.domain.model.Response.Loading
-import com.travelee.signing.domain.model.Response.Success
-import com.travelee.signing.presentation.profile.ProfileViewModel
-import com.travelee.signing.utilities.Constants.ACCESS_REVOKED_MESSAGE
-import com.travelee.signing.utilities.Constants.REVOKE_ACCESS_MESSAGE
-import com.travelee.signing.utilities.Constants.SENSITIVE_OPERATION_MESSAGE
-import com.travelee.signing.utilities.Constants.SIGN_OUT_ITEM
-import com.travelee.signing.utilities.Utils.Companion.showMessage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

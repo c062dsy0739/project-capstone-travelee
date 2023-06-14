@@ -1,7 +1,7 @@
 package academy.bangkit.travelee.domain.repository
 
+import academy.bangkit.travelee.domain.model.Response
 import com.google.firebase.auth.FirebaseUser
-import com.travelee.signing.domain.model.Response
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.StateFlow
 

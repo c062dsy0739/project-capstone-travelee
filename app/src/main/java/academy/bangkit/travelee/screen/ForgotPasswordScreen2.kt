@@ -1,5 +1,10 @@
 package academy.bangkit.travelee.screen
 
+import academy.bangkit.travelee.R
+import academy.bangkit.travelee.components.CustomTextField
+import academy.bangkit.travelee.components.PrimaryButton
+import academy.bangkit.travelee.components.SecondaryButton
+import academy.bangkit.travelee.ui.theme.TraveleeGrey
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,11 +28,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.travelee.signing.R
-import com.travelee.signing.components.CustomTextField
-import com.travelee.signing.components.PrimaryButton
-import com.travelee.signing.components.SecondaryButton
-import com.travelee.signing.ui.theme.TraveleeGrey
 
 // perlu dipindahin ke class main activity
 val fontFamily2 = FontFamily(

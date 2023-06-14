@@ -1,5 +1,16 @@
 package academy.bangkit.travelee.presentation.sign_in.components
 
+import academy.bangkit.travelee.R
+import academy.bangkit.travelee.components.EmailField
+import academy.bangkit.travelee.components.PasswordField
+import academy.bangkit.travelee.components.SmallSpacer
+import academy.bangkit.travelee.components.fontFamily
+import academy.bangkit.travelee.ui.theme.TraveleeGreen
+import academy.bangkit.travelee.ui.theme.TraveleeWhite
+import academy.bangkit.travelee.utilities.Constants.EMPTY_STRING
+import academy.bangkit.travelee.utilities.Constants.FORGOT_PASSWORD
+import academy.bangkit.travelee.utilities.Constants.SIGN_IN_BUTTON
+import academy.bangkit.travelee.utilities.Constants.SIGN_UP_BUTTON
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -29,17 +40,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.travelee.signing.R
-import com.travelee.signing.components.EmailField
-import com.travelee.signing.components.PasswordField
-import com.travelee.signing.components.SmallSpacer
-import com.travelee.signing.components.fontFamily
-import com.travelee.signing.ui.theme.TraveleeGreen
-import com.travelee.signing.ui.theme.TraveleeWhite
-import com.travelee.signing.utilities.Constants.EMPTY_STRING
-import com.travelee.signing.utilities.Constants.FORGOT_PASSWORD
-import com.travelee.signing.utilities.Constants.SIGN_IN_BUTTON
-import com.travelee.signing.utilities.Constants.SIGN_UP_BUTTON
 
 @Composable
 @ExperimentalComposeUiApi

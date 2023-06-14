@@ -1,13 +1,13 @@
 package academy.bangkit.travelee.presentation.forgot_password
 
+import academy.bangkit.travelee.presentation.forgot_password.components.ForgotPassword
+import academy.bangkit.travelee.presentation.forgot_password.components.ForgotPasswordContent
+import academy.bangkit.travelee.utilities.Constants.RESET_PASSWORD_MESSAGE
+import academy.bangkit.travelee.utilities.Utils.Companion.showMessage
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.travelee.signing.presentation.forgot_password.components.ForgotPassword
-import com.travelee.signing.presentation.forgot_password.components.ForgotPasswordContent
-import com.travelee.signing.utilities.Constants.RESET_PASSWORD_MESSAGE
-import com.travelee.signing.utilities.Utils.Companion.showMessage
 
 @Composable
 fun ForgotPasswordScreen(

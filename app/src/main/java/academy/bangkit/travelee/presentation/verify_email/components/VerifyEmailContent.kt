@@ -1,5 +1,8 @@
 package academy.bangkit.travelee.presentation.verify_email.components
 
+import academy.bangkit.travelee.components.SmallSpacer
+import academy.bangkit.travelee.utilities.Constants.ALREADY_VERIFIED
+import academy.bangkit.travelee.utilities.Constants.SPAM_EMAIL
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,9 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.travelee.signing.components.SmallSpacer
-import com.travelee.signing.utilities.Constants.ALREADY_VERIFIED
-import com.travelee.signing.utilities.Constants.SPAM_EMAIL
 
 @Composable
 fun VerifyEmailContent(

@@ -1,14 +1,14 @@
 package academy.bangkit.travelee.presentation.sign_in
 
+import academy.bangkit.travelee.domain.model.Response.Loading
+import academy.bangkit.travelee.domain.model.Response.Success
+import academy.bangkit.travelee.domain.repository.AuthRepository
+import academy.bangkit.travelee.domain.repository.SignInResponse
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.travelee.signing.domain.model.Response.Loading
-import com.travelee.signing.domain.model.Response.Success
-import com.travelee.signing.domain.repository.AuthRepository
-import com.travelee.signing.domain.repository.SignInResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

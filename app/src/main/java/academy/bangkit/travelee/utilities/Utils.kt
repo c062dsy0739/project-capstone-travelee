@@ -1,10 +1,10 @@
 package academy.bangkit.travelee.utilities
 
+import academy.bangkit.travelee.utilities.Constants.TAG
 import android.content.Context
 import android.util.Log
 import android.widget.Toast.LENGTH_LONG
 import android.widget.Toast.makeText
-import com.travelee.signing.utilities.Constants.TAG
 
 class Utils {
     companion object {

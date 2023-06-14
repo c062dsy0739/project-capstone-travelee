@@ -1,8 +1,8 @@
 package academy.bangkit.travelee.viewmodel
 
+import academy.bangkit.travelee.domain.repository.AuthRepository
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.travelee.signing.domain.repository.AuthRepository
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(

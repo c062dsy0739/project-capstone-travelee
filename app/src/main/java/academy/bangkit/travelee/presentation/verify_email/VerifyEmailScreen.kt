@@ -1,16 +1,16 @@
 package academy.bangkit.travelee.presentation.verify_email
 
+import academy.bangkit.travelee.presentation.profile.ProfileViewModel
+import academy.bangkit.travelee.presentation.verify_email.components.ReloadUser
+import academy.bangkit.travelee.presentation.verify_email.components.VerifyEmailContent
+import academy.bangkit.travelee.utilities.Constants.EMAIL_NOT_VERIFIED_MESSAGE
+import academy.bangkit.travelee.utilities.Utils.Companion.showMessage
 import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.travelee.signing.presentation.profile.ProfileViewModel
-import com.travelee.signing.presentation.verify_email.components.ReloadUser
-import com.travelee.signing.presentation.verify_email.components.VerifyEmailContent
-import com.travelee.signing.utilities.Constants.EMAIL_NOT_VERIFIED_MESSAGE
-import com.travelee.signing.utilities.Utils.Companion.showMessage
 
 @Composable
 fun VerifyEmailScreen(

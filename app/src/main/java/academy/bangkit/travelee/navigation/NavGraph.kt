@@ -1,5 +1,11 @@
 package academy.bangkit.travelee.navigation
 
+import academy.bangkit.travelee.navigation.Screen.*
+import academy.bangkit.travelee.presentation.sign_in.SignInScreen
+import academy.bangkit.travelee.presentation.sign_up.SignUpScreen
+import academy.bangkit.travelee.presentation.forgot_password.ForgotPasswordScreen
+import academy.bangkit.travelee.presentation.verify_email.VerifyEmailScreen
+import academy.bangkit.travelee.presentation.profile.ProfileScreen
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -18,7 +24,7 @@ fun NavGraph(
 ) {
     AnimatedNavHost(
         navController = navController,
-        startDestination = Screen.SignInScreen.route,
+        startDestination = SignInScreen.route,
         enterTransition = { EnterTransition.None },
         exitTransition = { ExitTransition.None }
     ) {
@@ -57,7 +63,7 @@ fun NavGraph(
         ) {
             VerifyEmailScreen(
                 navigateToProfileScreen = {
-                    navController.navigate(ProfileScreen.route) {
+                    navController.navigate(Screen.ProfileScreen.route) {
                         popUpTo(navController.graph.id) {
                             inclusive = true
                         }

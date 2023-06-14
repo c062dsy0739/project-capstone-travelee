@@ -1,5 +1,11 @@
 package academy.bangkit.travelee.screen
 
+import academy.bangkit.travelee.R
+import academy.bangkit.travelee.components.CustomTextField
+import academy.bangkit.travelee.components.PasswordTextField
+import academy.bangkit.travelee.components.PrimaryButton
+import academy.bangkit.travelee.components.SecondaryButton
+import academy.bangkit.travelee.ui.theme.TraveleeGrey
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,12 +31,6 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.travelee.signing.R
-import com.travelee.signing.components.CustomTextField
-import com.travelee.signing.components.PasswordTextField
-import com.travelee.signing.components.PrimaryButton
-import com.travelee.signing.components.SecondaryButton
-import com.travelee.signing.ui.theme.TraveleeGrey
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

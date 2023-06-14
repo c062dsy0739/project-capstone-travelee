@@ -1,5 +1,10 @@
 package academy.bangkit.travelee.screen
 
+import academy.bangkit.travelee.R
+import academy.bangkit.travelee.components.CustomTextField
+import academy.bangkit.travelee.components.PasswordTextField
+import academy.bangkit.travelee.components.PrimaryButton
+import academy.bangkit.travelee.components.SecondaryButton
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,11 +21,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.travelee.signing.R
-import com.travelee.signing.components.CustomTextField
-import com.travelee.signing.components.PasswordTextField
-import com.travelee.signing.components.PrimaryButton
-import com.travelee.signing.components.SecondaryButton
 
 @Composable
 fun RegisterScreen(navController: NavController) {
