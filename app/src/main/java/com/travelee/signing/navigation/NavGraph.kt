@@ -8,6 +8,13 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
+import com.travelee.signing.navigation.Screen.*
+import com.travelee.signing.presentation.sign_in.SignInScreen
+import com.travelee.signing.presentation.sign_up.SignUpScreen
+import com.travelee.signing.presentation.forgot_password.ForgotPasswordScreen
+import com.travelee.signing.presentation.profile.ProfileScreen
+import com.travelee.signing.presentation.verify_email.VerifyEmailScreen
+
 
 @Composable
 @ExperimentalAnimationApi
@@ -17,7 +24,7 @@ fun NavGraph(
 ) {
     AnimatedNavHost(
         navController = navController,
-        startDestination = SignInScreen.route,
+        startDestination = Screen.SignInScreen.route,
         enterTransition = { EnterTransition.None },
         exitTransition = { ExitTransition.None }
     ) {

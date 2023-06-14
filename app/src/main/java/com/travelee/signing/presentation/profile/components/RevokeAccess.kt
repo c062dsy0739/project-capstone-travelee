@@ -6,6 +6,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.travelee.signing.components.ProgressBar
+import com.travelee.signing.domain.model.Response.Failure
+import com.travelee.signing.domain.model.Response.Loading
+import com.travelee.signing.domain.model.Response.Success
+import com.travelee.signing.presentation.profile.ProfileViewModel
+import com.travelee.signing.utilities.Constants.ACCESS_REVOKED_MESSAGE
+import com.travelee.signing.utilities.Constants.REVOKE_ACCESS_MESSAGE
+import com.travelee.signing.utilities.Constants.SENSITIVE_OPERATION_MESSAGE
+import com.travelee.signing.utilities.Constants.SIGN_OUT_ITEM
+import com.travelee.signing.utilities.Utils.Companion.showMessage
+import com.travelee.signing.utilities.Utils.Companion.print
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

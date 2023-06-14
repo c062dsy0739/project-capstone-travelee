@@ -2,7 +2,8 @@ package com.travelee.signing.utilities
 
 import android.content.Context
 import android.util.Log
-import android.widget.Toast
+import android.widget.Toast.LENGTH_LONG
+import android.widget.Toast.makeText
 import com.travelee.signing.utilities.Constants.TAG
 
 class Utils {
@@ -12,6 +13,6 @@ class Utils {
         fun showMessage(
             context: Context,
             message: String?
-        ) = Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        ) = makeText(context, message, LENGTH_LONG).show()
     }
 }

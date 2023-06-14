@@ -21,14 +21,14 @@ import kotlinx.coroutines.job
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EmailField(
-    email: TextFieldValue,
+fun CustomField(
+    name: TextFieldValue,
     onEmailValueChange: (newValue: TextFieldValue) -> Unit
 ) {
     val focusRequester = FocusRequester()
 
     OutlinedTextField(
-        value = email,
+        value = name,
         onValueChange = { newValue ->
             onEmailValueChange(newValue)
         },

@@ -11,11 +11,11 @@ object Constants {
 
     //Menu Items
     const val SIGN_OUT_ITEM = "Sign out"
-    const val REVOKE_ACCESS_ITEM = "Revoke Access"
+    const val REVOKE_ACCESS_ITEM = "Hapus Akun"
 
     //Screens
     const val SIGN_IN_SCREEN = "Sign in"
-    const val FORGOT_PASSWORD_SCREEN = "Forgot password"
+    const val FORGOT_PASSWORD_SCREEN = "Lupa Password"
     const val SIGN_UP_SCREEN = "Sign up"
     const val VERIFY_EMAIL_SCREEN = "Verify email"
     const val PROFILE_SCREEN = "Profile"
@@ -23,6 +23,7 @@ object Constants {
     //Labels
     const val EMAIL_LABEL = "Email"
     const val PASSWORD_LABEL = "Password"
+    const val NAME_LABEL = "Nama"
 
     //Useful
     const val EMPTY_STRING = ""
@@ -30,18 +31,19 @@ object Constants {
 
     //Texts
     const val FORGOT_PASSWORD = "Forgot password?"
+    const val RESET_PASSWORD = "Masukkan Email"
     const val NO_ACCOUNT = "No account? Sign up."
     const val ALREADY_USER = "Already a user? Sign in."
     const val WELCOME_MESSAGE = "Welcome to our app."
-    const val ALREADY_VERIFIED = "Already verified?"
-    const val SPAM_EMAIL = "If not, please also check the spam folder."
+    const val ALREADY_VERIFIED = "Sudah Verifikasi?"
+    const val SPAM_EMAIL = "Jika tidak menemukan email, coba cek spam folder."
 
     //Messages
-    const val VERIFY_EMAIL_MESSAGE = "We've sent you an email with a link to verify the email."
+    const val VERIFY_EMAIL_MESSAGE = "Kami telah mengirimkan email beserta link verifikasi."
     const val EMAIL_NOT_VERIFIED_MESSAGE = "Your email is not verified."
-    const val RESET_PASSWORD_MESSAGE = "We've sent you an email with a link to reset the password."
+    const val RESET_PASSWORD_MESSAGE = "Kami telah mengirimkan email beserta link reset password."
     const val REVOKE_ACCESS_MESSAGE = "You need to re-authenticate before revoking the access."
-    const val ACCESS_REVOKED_MESSAGE = "Your access has been revoked."
+    const val ACCESS_REVOKED_MESSAGE = "Akun anda telah berhasil dihapus."
 
     //Error Messages
     const val SENSITIVE_OPERATION_MESSAGE = "This operation is sensitive and requires recent authentication. Log in again before retrying this request."

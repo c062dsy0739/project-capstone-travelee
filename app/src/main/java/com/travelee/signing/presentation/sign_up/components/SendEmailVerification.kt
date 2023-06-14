@@ -3,7 +3,12 @@ package com.travelee.signing.presentation.sign_up.components
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
-import ro.alexmamo.firebasesigninwithemailandpassword.presentation.sign_up.SignUpViewModel
+import com.travelee.signing.components.ProgressBar
+import com.travelee.signing.domain.model.Response.Failure
+import com.travelee.signing.domain.model.Response.Loading
+import com.travelee.signing.domain.model.Response.Success
+import com.travelee.signing.presentation.sign_up.SignUpViewModel
+import com.travelee.signing.utilities.Utils.Companion.print
 
 @Composable
 fun SendEmailVerification(

@@ -11,7 +11,9 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.travelee.signing.navigation.NavGraph
-import com.travelee.signing.navigation.Screen
+import com.travelee.signing.navigation.Screen.ProfileScreen
+import com.travelee.signing.navigation.Screen.SignInScreen
+import com.travelee.signing.navigation.Screen.VerifyEmailScreen
 import com.travelee.signing.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -48,21 +50,21 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun NavigateToSignInScreen() = navController.navigate(Screen.SigningScreen.route) {
+    private fun NavigateToSignInScreen() = navController.navigate(SignInScreen.route) {
         popUpTo(navController.graph.id) {
             inclusive = true
         }
     }
 
     @Composable
-    private fun NavigateToProfileScreen() = navController.navigate(Screen.OnboardingScreen.route) {
+    private fun NavigateToProfileScreen() = navController.navigate(ProfileScreen.route) {
         popUpTo(navController.graph.id) {
             inclusive = true
         }
     }
 
     @Composable
-    private fun NavigateToVerifyEmailScreen() = navController.navigate(Screen.VerifyEmailScreen.route) {
+    private fun NavigateToVerifyEmailScreen() = navController.navigate(VerifyEmailScreen.route) {
         popUpTo(navController.graph.id) {
             inclusive = true
         }

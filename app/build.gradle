@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id "com.google.gms.google-services"
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -121,5 +123,8 @@ dependencies {
     implementation "com.google.firebase:firebase-auth-ktx"
     //Accompanist
     implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist_version"
+    implementation ("com.firebaseui:firebase-ui-auth:7.2.0")
+    implementation ("com.google.android.gms:play-services-auth:20.5.0")
+
 
 }

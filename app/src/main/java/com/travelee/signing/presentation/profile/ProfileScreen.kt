@@ -5,6 +5,8 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.travelee.signing.presentation.profile.components.ProfileContent
+import com.travelee.signing.presentation.profile.components.RevokeAccess
 
 @Composable
 fun ProfileScreen(
@@ -14,17 +16,6 @@ fun ProfileScreen(
     val coroutineScope = rememberCoroutineScope()
 
     Scaffold(
-        topBar = {
-            TopBar(
-                title = PROFILE_SCREEN,
-                signOut = {
-                    viewModel.signOut()
-                },
-                revokeAccess = {
-                    viewModel.revokeAccess()
-                }
-            )
-        },
         content = { padding ->
             ProfileContent(
                 padding = padding

@@ -6,6 +6,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.travelee.signing.presentation.profile.ProfileViewModel
+import com.travelee.signing.presentation.verify_email.components.ReloadUser
+import com.travelee.signing.presentation.verify_email.components.VerifyEmailContent
+import com.travelee.signing.utilities.Constants.EMAIL_NOT_VERIFIED_MESSAGE
+import com.travelee.signing.utilities.Utils.Companion.showMessage
 
 @Composable
 fun VerifyEmailScreen(
@@ -17,17 +22,6 @@ fun VerifyEmailScreen(
     val context = LocalContext.current
 
     Scaffold(
-        topBar = {
-            TopBar(
-                title = VERIFY_EMAIL_SCREEN,
-                signOut = {
-                    viewModel.signOut()
-                },
-                revokeAccess = {
-                    viewModel.revokeAccess()
-                }
-            )
-        },
         content = { padding ->
             VerifyEmailContent(
                 padding = padding,
@@ -46,14 +40,6 @@ fun VerifyEmailScreen(
             } else {
                 showMessage(context, EMAIL_NOT_VERIFIED_MESSAGE)
             }
-        }
-    )
-
-    RevokeAccess(
-        scaffoldState = scaffoldState,
-        coroutineScope = coroutineScope,
-        signOut = {
-            viewModel.signOut()
         }
     )
 }

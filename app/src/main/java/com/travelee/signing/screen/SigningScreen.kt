@@ -25,22 +25,16 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import com.travelee.signing.R
 import com.travelee.signing.components.CustomTextField
 import com.travelee.signing.components.PasswordTextField
 import com.travelee.signing.components.PrimaryButton
 import com.travelee.signing.components.SecondaryButton
 import com.travelee.signing.ui.theme.TraveleeGrey
-import com.travelee.signing.viewmodel.SigningViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen(viewModel: SigningViewModel = hiltViewModel(),
-                navigateToForgotPasswordScreen: () -> Unit,
-                navigateToSignUpScreen: () -> Unit,
-) {
+fun LoginScreen() {
     val scrollState = rememberScrollState()
     val context = LocalContext.current
 

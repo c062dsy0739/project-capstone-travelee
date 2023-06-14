@@ -2,9 +2,9 @@ package com.travelee.signing.data
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
-import com.travelee.signing.domain.repository.AuthRepository
-import com.travelee.signing.domain.model.Response.Success
 import com.travelee.signing.domain.model.Response.Failure
+import com.travelee.signing.domain.model.Response.Success
+import com.travelee.signing.domain.repository.AuthRepository
 import com.travelee.signing.domain.repository.ReloadUserResponse
 import com.travelee.signing.domain.repository.RevokeAccessResponse
 import com.travelee.signing.domain.repository.SendEmailVerificationResponse
@@ -27,7 +27,7 @@ class AuthRepositoryImpl @Inject constructor(
     override val currentUser get() = auth.currentUser
 
     override suspend fun firebaseSignUpWithEmailAndPassword(
-        email: String, password: String
+        name : String, email: String, password: String
     ): SignUpResponse {
         return try {
             auth.createUserWithEmailAndPassword(email, password).await()

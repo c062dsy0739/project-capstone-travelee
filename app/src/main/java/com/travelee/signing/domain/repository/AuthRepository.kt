@@ -1,9 +1,9 @@
 package com.travelee.signing.domain.repository
 
 import com.google.firebase.auth.FirebaseUser
+import com.travelee.signing.domain.model.Response
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.StateFlow
-import com.travelee.signing.domain.model.Response
 
 typealias SignUpResponse = Response<Boolean>
 typealias SendEmailVerificationResponse = Response<Boolean>
@@ -16,7 +16,7 @@ typealias AuthStateResponse = StateFlow<Boolean>
 interface AuthRepository {
     val currentUser: FirebaseUser?
 
-    suspend fun firebaseSignUpWithEmailAndPassword(email: String, password: String): SignUpResponse
+    suspend fun firebaseSignUpWithEmailAndPassword(name : String, email: String, password: String): SignUpResponse
 
     suspend fun sendEmailVerification(): SendEmailVerificationResponse
 
