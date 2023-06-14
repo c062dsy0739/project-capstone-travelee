@@ -4,6 +4,7 @@ package academy.bangkit.travelee.components
 import academy.bangkit.travelee.ui.theme.TraveleeYellow
 import academy.bangkit.travelee.ui.theme.TraveleeYellow2
 import academy.bangkit.travelee.utilities.Constants.PASSWORD_LABEL
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -24,6 +25,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -52,6 +54,7 @@ fun PasswordField(
             cursorColor = TraveleeYellow
         ),
         singleLine = true,
+        shape = RoundedCornerShape(12.dp),
         visualTransformation = if (passwordIsVisible) {
             VisualTransformation.None
         } else {

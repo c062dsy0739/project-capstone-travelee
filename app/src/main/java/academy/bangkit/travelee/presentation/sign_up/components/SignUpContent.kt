@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -31,6 +30,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -109,38 +109,41 @@ fun SignUpContent(
         Button(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(63.dp),
+                .padding(start = 60.dp, end = 60.dp),
             onClick = {
                 keyboard?.hide()
                 signUp(name.text, email.text, password.text)},
             colors = ButtonDefaults.buttonColors(containerColor = TraveleeGreen),
-            shape = RoundedCornerShape(12.dp),
-            elevation = ButtonDefaults.buttonElevation(0.dp)
+            shape = RoundedCornerShape(15.dp),
+            elevation = ButtonDefaults.buttonElevation(4.dp)
         ) {
             Text(
                 text = SIGN_UP_BUTTON,
                 fontSize = 15.sp,
                 fontWeight = FontWeight.Medium,
-                fontFamily = fontFamily
+                fontFamily = fontFamily,
+                color = Color.Black
             )
         }
+        SmallSpacer()
         Text(text = stringResource(R.string.atau))
         Button(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(63.dp),
+                .padding(start = 60.dp, end = 60.dp),
             onClick = {
                 keyboard?.hide()
                 navigateBack()},
             colors = ButtonDefaults.buttonColors(containerColor = TraveleeWhite),
-            shape = RoundedCornerShape(12.dp),
-            elevation = ButtonDefaults.buttonElevation(0.dp)
+            shape = RoundedCornerShape(15.dp),
+            elevation = ButtonDefaults.buttonElevation(4.dp)
         ) {
             Text(
                 text = SIGN_IN_BUTTON,
                 fontSize = 15.sp,
                 fontWeight = FontWeight.Medium,
-                fontFamily = fontFamily
+                fontFamily = fontFamily,
+                color = Color.Black
             )
         }
     }

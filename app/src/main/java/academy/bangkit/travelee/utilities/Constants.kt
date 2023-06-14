@@ -17,7 +17,7 @@ object Constants {
     const val SIGN_IN_SCREEN = "Sign in"
     const val FORGOT_PASSWORD_SCREEN = "Lupa Password"
     const val SIGN_UP_SCREEN = "Sign up"
-    const val VERIFY_EMAIL_SCREEN = "Verify email"
+    const val VERIFY_EMAIL_SCREEN = "Verifikasi email"
     const val PROFILE_SCREEN = "Profile"
 
     //Labels
@@ -40,7 +40,7 @@ object Constants {
 
     //Messages
     const val VERIFY_EMAIL_MESSAGE = "Kami telah mengirimkan email beserta link verifikasi."
-    const val EMAIL_NOT_VERIFIED_MESSAGE = "Your email is not verified."
+    const val EMAIL_NOT_VERIFIED_MESSAGE = "Email anda belum terverifikasi."
     const val RESET_PASSWORD_MESSAGE = "Kami telah mengirimkan email beserta link reset password."
     const val REVOKE_ACCESS_MESSAGE = "You need to re-authenticate before revoking the access."
     const val ACCESS_REVOKED_MESSAGE = "Akun anda telah berhasil dihapus."

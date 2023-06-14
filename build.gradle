@@ -14,8 +14,8 @@ buildscript {
         accompanist_version = '0.31.2-alpha'
     }
     dependencies {
-        classpath "com.google.gms:google-services:4.3.15"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:2.43.2"
+        classpath "com.google.gms:google-services:$google_services_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
     }
 }
 

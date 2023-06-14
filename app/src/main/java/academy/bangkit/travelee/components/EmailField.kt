@@ -4,6 +4,7 @@ package academy.bangkit.travelee.components
 import academy.bangkit.travelee.ui.theme.TraveleeYellow
 import academy.bangkit.travelee.ui.theme.TraveleeYellow2
 import academy.bangkit.travelee.utilities.Constants.EMAIL_LABEL
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Text
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -17,6 +18,7 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.job
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -38,6 +40,7 @@ fun EmailField(
                 color = TraveleeYellow2
             )
         },
+        shape = RoundedCornerShape(12.dp),
         colors = TextFieldDefaults.outlinedTextFieldColors(
             disabledBorderColor = TraveleeYellow,
             focusedBorderColor = TraveleeYellow,
