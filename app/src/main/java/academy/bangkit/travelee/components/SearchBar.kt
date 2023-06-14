@@ -1,5 +1,9 @@
 package academy.bangkit.travelee.components
 
+import academy.bangkit.travelee.R
+import academy.bangkit.travelee.ui.theme.SoftGray
+import academy.bangkit.travelee.ui.theme.TraveleeSoftYellow
+import academy.bangkit.travelee.ui.theme.White
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -22,10 +26,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.travelee.signing.R
-import com.travelee.signing.ui.theme.SoftGray
-import com.travelee.signing.ui.theme.TraveleeSoftYellow
-import com.travelee.signing.ui.theme.White
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
