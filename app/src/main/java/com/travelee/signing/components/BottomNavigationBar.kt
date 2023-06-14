@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.travelee.signing.NavigationItem
+import com.travelee.signing.model.NavigationItem
 import com.travelee.signing.ui.theme.TraveleeYellow
 import com.travelee.signing.ui.theme.White
 

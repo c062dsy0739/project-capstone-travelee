@@ -64,12 +64,16 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
     implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6"
 
+    //Hilt
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.8.1'
+
+    //Firebase
+    implementation "com.google.firebase:firebase-auth-ktx:22.0.0"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation platform('org.jetbrains.kotlin:kotlin-bom:1.8.0')
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
     implementation 'androidx.activity:activity-compose:1.5.1'
-    implementation platform('androidx.compose:compose-bom:2022.10.00')
     implementation 'androidx.compose.ui:ui'
     implementation 'androidx.compose.ui:ui-graphics'
     implementation 'androidx.compose.ui:ui-tooling-preview'
@@ -103,6 +107,19 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.13.1'
     implementation 'androidx.compose.material:material-icons-extended:1.4.3'
 
-
+    //Compose
+    implementation platform("androidx.compose:compose-bom:$compose_bom_version")
+    implementation "androidx.compose.material:material"
+    implementation "androidx.compose.material:material-icons-extended"
+    //Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    //Hilt Navigation Compose
+    implementation "androidx.hilt:hilt-navigation-compose:$hilt_navigation_compose_version"
+    //Firebase
+    implementation platform("com.google.firebase:firebase-bom:$firebase_bom_version")
+    implementation "com.google.firebase:firebase-auth-ktx"
+    //Accompanist
+    implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist_version"
 
 }

@@ -1,9 +1,7 @@
 package com.travelee.signing.components
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -20,8 +18,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -36,15 +36,12 @@ import com.travelee.signing.ui.theme.TraveleeYellow2
 @Composable
 fun PasswordTextField(
     label: String,
-    value: String,
-    onValueChange: (String) -> Unit,
     keyboardType: KeyboardType = KeyboardType.Text,
     modifier : Modifier = Modifier
 ) {
-    /*var valuepassword by remember {
+    var text by remember {
         mutableStateOf(TextFieldValue(""))
     }
-     */
     var passwordVisible by remember { mutableStateOf(false) }
     val image = if (passwordVisible) {
         painterResource(R.drawable.ic_visibility)
@@ -54,8 +51,10 @@ fun PasswordTextField(
 
 
     OutlinedTextField(
-        value = value,
-        onValueChange = onValueChange,
+        value = text,
+        onValueChange = { value ->
+            text = value
+        },
         colors = TextFieldDefaults.outlinedTextFieldColors(
             disabledBorderColor = TraveleeYellow,
             focusedBorderColor = TraveleeYellow,
@@ -89,7 +88,6 @@ fun PasswordTextField(
 @Preview(showBackground = true)
 @Composable
 fun PasswordTextFieldPreview() {
-    Column(modifier = Modifier.padding(10.dp)) {
-        PasswordTextField(label = "Password", value = "", onValueChange = {})
+        PasswordTextField(label = stringResource(id = R.string.password_label))
     }
-}
+

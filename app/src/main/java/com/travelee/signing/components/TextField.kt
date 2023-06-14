@@ -9,9 +9,14 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color.Companion.Red
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.travelee.signing.ui.theme.TraveleeYellow
@@ -22,19 +27,17 @@ import com.travelee.signing.ui.theme.TraveleeYellow2
 @Composable
 fun CustomTextField(
     label: String,
-    value : String, // nanti dihapus
-    onValueChange: (String) -> Unit,
     keyboardType: KeyboardType = KeyboardType.Text,
     modifier : Modifier = Modifier
 ) {
-    /*
-    var value by remember {
+    var text by remember {
         mutableStateOf(TextFieldValue(""))
     }
-     */
     OutlinedTextField(
-        value = value, // nanti diganti sama value yang dari screen
-        onValueChange = onValueChange,
+        value = text,
+        onValueChange = { value ->
+            text = value
+        },
         colors = TextFieldDefaults.outlinedTextFieldColors(
             disabledBorderColor = TraveleeYellow,
             focusedBorderColor = TraveleeYellow,
@@ -63,7 +66,5 @@ fun CustomTextField(
 fun CustomTextFieldPreview() {
     CustomTextField(
         label = "Enter text",
-        value = "",
-        onValueChange = {}
     )
 }

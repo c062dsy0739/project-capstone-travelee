@@ -1,4 +1,4 @@
-package com.travelee.signing
+package com.travelee.signing.model
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccountCircle

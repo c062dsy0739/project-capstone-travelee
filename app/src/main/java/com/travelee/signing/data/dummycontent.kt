@@ -1,4 +1,4 @@
-package com.travelee.signing.components
+package com.travelee.signing.data
 
 import com.travelee.signing.model.ContentModel
 
