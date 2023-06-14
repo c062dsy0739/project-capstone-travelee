@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace 'com.travelee.signing'
+    namespace 'academy.bangkit.travelee'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.travelee.signing"
+        applicationId "academy.bangkit.travelee"
         minSdk 24
         targetSdk 33
         versionCode 1
