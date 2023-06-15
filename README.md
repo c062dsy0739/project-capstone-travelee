@@ -100,7 +100,9 @@
 ## **Reference**
 
 Building Content-Based Filtering Recommendation System in [here](https://www.kdnuggets.com/2020/07/building-content-based-book-recommendation-engine.html)
+
 Building Collaborative Filtering Recommendation System in [here](https://gilberttanner.com/blog/building-a-book-recommendation-system-usingkeras/)
+
 Integrate Machine Learning Model Deployment Using Flask in [here](https://medium.com/analytics-vidhya/deploying-your-machine-learning-model-as-a-rest-api-using-flask-c2e6a0b574f5)
 
 
