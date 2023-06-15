@@ -98,3 +98,5 @@
   It can be concluded that the system successfully recommends both content-based filtering and collaborative filtering. Collaborative filtering requires place rating data from users, while in content-based filtering, rating data is not needed because the system will recommend based on the content of the place, namely the category.
 
 ## **Reference**
+
+Building Content-Based Filtering Recommendation System in [here](https://www.kdnuggets.com/2020/07/building-content-based-book-recommendation-engine.html)
