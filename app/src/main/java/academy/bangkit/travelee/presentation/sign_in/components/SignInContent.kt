@@ -7,10 +7,10 @@ import academy.bangkit.travelee.components.SmallSpacer
 import academy.bangkit.travelee.components.fontFamily
 import academy.bangkit.travelee.ui.theme.TraveleeGreen
 import academy.bangkit.travelee.ui.theme.TraveleeWhite
-import academy.bangkit.travelee.utilities.Constants.EMPTY_STRING
-import academy.bangkit.travelee.utilities.Constants.FORGOT_PASSWORD_SCREEN
-import academy.bangkit.travelee.utilities.Constants.SIGN_IN_BUTTON
-import academy.bangkit.travelee.utilities.Constants.SIGN_UP_BUTTON
+import academy.bangkit.travelee.sources.Constants.EMPTY_STRING
+import academy.bangkit.travelee.sources.Constants.FORGOT_PASSWORD_SCREEN
+import academy.bangkit.travelee.sources.Constants.SIGN_IN_BUTTON
+import academy.bangkit.travelee.sources.Constants.SIGN_UP_BUTTON
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

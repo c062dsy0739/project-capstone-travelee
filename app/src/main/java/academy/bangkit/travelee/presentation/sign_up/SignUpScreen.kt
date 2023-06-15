@@ -3,7 +3,7 @@ package academy.bangkit.travelee.presentation.sign_up
 import academy.bangkit.travelee.presentation.sign_up.components.SendEmailVerification
 import academy.bangkit.travelee.presentation.sign_up.components.SignUp
 import academy.bangkit.travelee.presentation.sign_up.components.SignUpContent
-import academy.bangkit.travelee.utilities.Constants.VERIFY_EMAIL_MESSAGE
+import academy.bangkit.travelee.sources.Constants.VERIFY_EMAIL_MESSAGE
 import academy.bangkit.travelee.utilities.Utils.Companion.showMessage
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable

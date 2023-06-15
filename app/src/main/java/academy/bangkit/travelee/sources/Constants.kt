@@ -1,4 +1,4 @@
-package academy.bangkit.travelee.utilities
+package academy.bangkit.travelee.sources
 
 object Constants {
     //App
@@ -37,6 +37,7 @@ object Constants {
     const val WELCOME_MESSAGE = "Welcome to our app."
     const val ALREADY_VERIFIED = "Sudah Verifikasi?"
     const val SPAM_EMAIL = "Jika tidak menemukan email, coba cek spam folder."
+    const val IN_DEV = "Fitur Masih Dalam Pengembangan"
 
     //Messages
     const val VERIFY_EMAIL_MESSAGE = "Kami telah mengirimkan email beserta link verifikasi."

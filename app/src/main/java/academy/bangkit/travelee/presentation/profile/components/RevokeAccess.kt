@@ -5,10 +5,10 @@ import academy.bangkit.travelee.domain.model.Response.Failure
 import academy.bangkit.travelee.domain.model.Response.Loading
 import academy.bangkit.travelee.domain.model.Response.Success
 import academy.bangkit.travelee.presentation.profile.ProfileViewModel
-import academy.bangkit.travelee.utilities.Constants.ACCESS_REVOKED_MESSAGE
-import academy.bangkit.travelee.utilities.Constants.REVOKE_ACCESS_MESSAGE
-import academy.bangkit.travelee.utilities.Constants.SENSITIVE_OPERATION_MESSAGE
-import academy.bangkit.travelee.utilities.Constants.SIGN_OUT_ITEM
+import academy.bangkit.travelee.sources.Constants.ACCESS_REVOKED_MESSAGE
+import academy.bangkit.travelee.sources.Constants.REVOKE_ACCESS_MESSAGE
+import academy.bangkit.travelee.sources.Constants.SENSITIVE_OPERATION_MESSAGE
+import academy.bangkit.travelee.sources.Constants.SIGN_OUT_ITEM
 import academy.bangkit.travelee.utilities.Utils.Companion.showMessage
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.SnackbarResult

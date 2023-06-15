@@ -3,7 +3,7 @@ package academy.bangkit.travelee.presentation.verify_email
 import academy.bangkit.travelee.presentation.profile.ProfileViewModel
 import academy.bangkit.travelee.presentation.verify_email.components.ReloadUser
 import academy.bangkit.travelee.presentation.verify_email.components.VerifyEmailContent
-import academy.bangkit.travelee.utilities.Constants.EMAIL_NOT_VERIFIED_MESSAGE
+import academy.bangkit.travelee.sources.Constants.EMAIL_NOT_VERIFIED_MESSAGE
 import academy.bangkit.travelee.utilities.Utils.Companion.showMessage
 import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState

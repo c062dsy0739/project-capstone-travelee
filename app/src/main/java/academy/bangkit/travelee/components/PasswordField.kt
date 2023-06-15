@@ -3,7 +3,7 @@ package academy.bangkit.travelee.components
 
 import academy.bangkit.travelee.ui.theme.TraveleeYellow
 import academy.bangkit.travelee.ui.theme.TraveleeYellow2
-import academy.bangkit.travelee.utilities.Constants.PASSWORD_LABEL
+import academy.bangkit.travelee.sources.Constants.PASSWORD_LABEL
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon

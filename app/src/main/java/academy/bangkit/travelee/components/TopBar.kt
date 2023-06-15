@@ -1,8 +1,8 @@
 package academy.bangkit.travelee.components
 
 
-import academy.bangkit.travelee.utilities.Constants.REVOKE_ACCESS_ITEM
-import academy.bangkit.travelee.utilities.Constants.SIGN_OUT_ITEM
+import academy.bangkit.travelee.sources.Constants.REVOKE_ACCESS_ITEM
+import academy.bangkit.travelee.sources.Constants.SIGN_OUT_ITEM
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth

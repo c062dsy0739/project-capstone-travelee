@@ -1,10 +1,10 @@
 package academy.bangkit.travelee.navigation
 
-import academy.bangkit.travelee.utilities.Constants.FORGOT_PASSWORD_SCREEN
-import academy.bangkit.travelee.utilities.Constants.PROFILE_SCREEN
-import academy.bangkit.travelee.utilities.Constants.SIGN_IN_SCREEN
-import academy.bangkit.travelee.utilities.Constants.SIGN_UP_SCREEN
-import academy.bangkit.travelee.utilities.Constants.VERIFY_EMAIL_SCREEN
+import academy.bangkit.travelee.sources.Constants.FORGOT_PASSWORD_SCREEN
+import academy.bangkit.travelee.sources.Constants.PROFILE_SCREEN
+import academy.bangkit.travelee.sources.Constants.SIGN_IN_SCREEN
+import academy.bangkit.travelee.sources.Constants.SIGN_UP_SCREEN
+import academy.bangkit.travelee.sources.Constants.VERIFY_EMAIL_SCREEN
 
 
 sealed class Screen(val route: String) {

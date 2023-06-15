@@ -1,6 +1,6 @@
 package academy.bangkit.travelee.utilities
 
-import academy.bangkit.travelee.utilities.Constants.TAG
+import academy.bangkit.travelee.sources.Constants.TAG
 import android.content.Context
 import android.util.Log
 import android.widget.Toast.LENGTH_LONG

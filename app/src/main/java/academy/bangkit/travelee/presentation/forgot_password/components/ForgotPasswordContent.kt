@@ -6,9 +6,9 @@ import academy.bangkit.travelee.components.fontFamily
 import academy.bangkit.travelee.components.fontFamily2
 import academy.bangkit.travelee.ui.theme.TraveleeGreen
 import academy.bangkit.travelee.ui.theme.TraveleeGrey
-import academy.bangkit.travelee.utilities.Constants.EMPTY_STRING
-import academy.bangkit.travelee.utilities.Constants.RESET_PASSWORD
-import academy.bangkit.travelee.utilities.Constants.RESET_PASSWORD_BUTTON
+import academy.bangkit.travelee.sources.Constants.EMPTY_STRING
+import academy.bangkit.travelee.sources.Constants.RESET_PASSWORD
+import academy.bangkit.travelee.sources.Constants.RESET_PASSWORD_BUTTON
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues

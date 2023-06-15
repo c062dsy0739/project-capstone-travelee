@@ -1,7 +1,9 @@
 package academy.bangkit.travelee.components
 
 import academy.bangkit.travelee.R
+import academy.bangkit.travelee.ui.theme.TraveleeBlackT
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -32,6 +34,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -53,46 +56,46 @@ fun EcoplaceCard(
             .aspectRatio(3f / 4f)
             .clip(RoundedCornerShape(15.dp))
             .clickable(onClick = onClick),
-        elevation =  CardDefaults.cardElevation()
+        elevation = CardDefaults.cardElevation()
     ) {
         Box {
             Image(
                 painter = painterResource(id = R.drawable.gunung_leuser),
                 contentDescription = destination,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color.Transparent)
             )
             Column(
                 modifier = Modifier
-                    .padding(12.dp)
+                    .fillMaxSize()
+                    .padding(top = 400.dp)
+                    .background(color = TraveleeBlackT),
+                verticalArrangement = Arrangement.Bottom,
+            ) {}
+            Column(
+                modifier = Modifier
+                    .padding(18.dp)
                     .fillMaxSize(),
-                verticalArrangement = Arrangement.SpaceBetween
+                verticalArrangement = Arrangement.Bottom,
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Top
                 ) {
                     Text(
                         text = destination,
-                        style = MaterialTheme.typography.labelLarge,
+                        style = MaterialTheme.typography.displaySmall,
                         color = Color.White,
-                        maxLines = 1,
+                        maxLines = 2,
                         overflow = TextOverflow.Ellipsis
                     )
-                    IconButton(
-                        onClick = { onFavoriteClicked(!isFavorite) },
-                        modifier = Modifier.size(24.dp)
-                    ) {
-                        Icon(
-                            imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                            contentDescription = "Favorite",
-                            tint = if (isFavorite) Color.Red else Color.White
-                        )
-                    }
                 }
                 Text(
                     text = location,
-                    style = MaterialTheme.typography.bodySmall,
+                    style = MaterialTheme.typography.bodyLarge,
                     color = Color.White,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
@@ -109,8 +112,24 @@ fun EcoplaceCard(
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
                         text = rating.toString(),
-                        style = MaterialTheme.typography.labelSmall,
+                        style = MaterialTheme.typography.bodyLarge,
                         color = Color.White
+                    )
+                }
+            }
+            Row(modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp),
+                horizontalArrangement = Arrangement.End) {
+                SmallSpacer()
+                IconButton(
+                    onClick = { onFavoriteClicked(!isFavorite) },
+                    modifier = Modifier.size(34.dp)
+                ) {
+                    Icon(
+                        imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                        contentDescription = stringResource(R.string.favorite_desc),
+                        tint = if (isFavorite) Color.Red else Color.White
                     )
                 }
             }

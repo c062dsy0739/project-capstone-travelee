@@ -2,7 +2,7 @@ package academy.bangkit.travelee.presentation.forgot_password
 
 import academy.bangkit.travelee.presentation.forgot_password.components.ForgotPassword
 import academy.bangkit.travelee.presentation.forgot_password.components.ForgotPasswordContent
-import academy.bangkit.travelee.utilities.Constants.RESET_PASSWORD_MESSAGE
+import academy.bangkit.travelee.sources.Constants.RESET_PASSWORD_MESSAGE
 import academy.bangkit.travelee.utilities.Utils.Companion.showMessage
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
