@@ -1,6 +1,5 @@
-package academy.bangkit.travelee.components
+package academy.bangkit.travelee
 
-import academy.bangkit.travelee.R
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image

@@ -1,6 +1,6 @@
 package academy.bangkit.travelee.navigation
 
-import academy.bangkit.travelee.components.AnimatedSplashScreen
+import academy.bangkit.travelee.AnimatedSplashScreen
 import academy.bangkit.travelee.navigation.Screen.ForgotPasswordScreen
 import academy.bangkit.travelee.navigation.Screen.ProfileScreen
 import academy.bangkit.travelee.navigation.Screen.SignInScreen
