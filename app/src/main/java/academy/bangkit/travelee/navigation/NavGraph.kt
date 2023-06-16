@@ -1,9 +1,11 @@
 package academy.bangkit.travelee.navigation
 
+import academy.bangkit.travelee.components.AnimatedSplashScreen
 import academy.bangkit.travelee.navigation.Screen.ForgotPasswordScreen
 import academy.bangkit.travelee.navigation.Screen.ProfileScreen
 import academy.bangkit.travelee.navigation.Screen.SignInScreen
 import academy.bangkit.travelee.navigation.Screen.SignUpScreen
+import academy.bangkit.travelee.navigation.Screen.SplashScreen
 import academy.bangkit.travelee.navigation.Screen.VerifyEmailScreen
 import academy.bangkit.travelee.presentation.forgot_password.ForgotPasswordScreen
 import academy.bangkit.travelee.presentation.profile.ProfileScreen
@@ -28,10 +30,19 @@ fun NavGraph(
 ) {
     AnimatedNavHost(
         navController = navController,
-        startDestination = SignInScreen.route,
+        startDestination = SplashScreen.route,
         enterTransition = { EnterTransition.None },
         exitTransition = { ExitTransition.None }
     ) {
+        composable(
+            route = SplashScreen.route
+        ) {
+            AnimatedSplashScreen(
+                navigateToSigninScreen = {
+                    navController.navigate(SignInScreen.route)
+                }
+            )
+        }
         composable(
             route = SignInScreen.route
         ) {

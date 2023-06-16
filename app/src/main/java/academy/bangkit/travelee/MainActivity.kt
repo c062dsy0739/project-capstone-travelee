@@ -1,8 +1,8 @@
 package academy.bangkit.signing
 
 import academy.bangkit.travelee.navigation.NavGraph
+import academy.bangkit.travelee.navigation.Screen
 import academy.bangkit.travelee.navigation.Screen.ProfileScreen
-import academy.bangkit.travelee.navigation.Screen.SignInScreen
 import academy.bangkit.travelee.navigation.Screen.VerifyEmailScreen
 import academy.bangkit.travelee.viewmodel.MainViewModel
 import android.os.Bundle
@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
     private fun AuthState() {
         val isUserSignedOut = viewModel.getAuthState().collectAsState().value
         if (isUserSignedOut) {
-            NavigateToSignInScreen()
+            NavigatetoSplashScreen()
         } else {
             if (viewModel.isEmailVerified) {
                 NavigateToProfileScreen()
@@ -48,13 +48,13 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
     @Composable
-    private fun NavigateToSignInScreen() = navController.navigate(SignInScreen.route) {
+    private fun NavigatetoSplashScreen() = navController.navigate(Screen.SplashScreen.route) {
         popUpTo(navController.graph.id) {
             inclusive = true
         }
     }
+
 
     @Composable
     private fun NavigateToProfileScreen() = navController.navigate(ProfileScreen.route) {
