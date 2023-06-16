@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "428153699260",
+    "firebase_url": "https://travelee-capstone-projects-default-rtdb.firebaseio.com",
+    "project_id": "travelee-capstone-projects",
+    "storage_bucket": "travelee-capstone-projects.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428153699260:android:d2dd812a106f9c778b89b9",
+        "android_client_info": {
+          "package_name": "academy.bangkit.travelee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428153699260-ht6fo09rrln4ml13m4unrinvukrl60j4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "academy.bangkit.travelee",
+            "certificate_hash": "6315dae80aacc91c0318638eaa55f61948de0865"
+          }
+        },
+        {
+          "client_id": "428153699260-tta6agddqltb3tuk5b8hjnq94v9o2ja4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtzB2nKlY52UDnblthvDaCSXKIgVAuy50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428153699260-2ksuqah3p3qmjcl6df97mt4n8qnq8gkt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
